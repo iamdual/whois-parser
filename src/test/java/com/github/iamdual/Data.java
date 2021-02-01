@@ -1,13 +1,15 @@
 package com.github.iamdual;
 
 public class Data {
-    public static String[] supportedTLDs = {
+    public static String[] DomainExtensions = {
             "com",
             "net",
+            "org",
             "app",
             "dev",
-            "how",
-            "tv",
-            "cc"
+            "info",
+            "mobi",
+            "blog",
+            "co.uk"
     };
 }

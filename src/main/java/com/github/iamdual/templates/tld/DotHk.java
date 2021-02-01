@@ -1,42 +1,40 @@
-package com.github.iamdual.templates;
+package com.github.iamdual.templates.tld;
 
-import com.github.iamdual.adapter.Adapter;
+
+import com.github.iamdual.templates.DefaultTemplate;
 
 /**
- * Default WHOIS pattern template.
+ * A WHOIS pattern of .hk TLD.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DefaultTemplate implements Template {
-    @Override
-    public Adapter.Type getAdapterType() {
-        return Adapter.Type.SOCKET;
-    }
-
+public class DotHk extends DefaultTemplate {
     @Override
     public String getWhoisServer() {
-        return null;
+        return "whois.hkirc.hk";
     }
 
     @Override
     public String getRegexAvailable() {
-        return null;
+        return "^The domain has not been registered\\.";
     }
 
     @Override
     public String getRegexExpiryDate() {
-        return null;
+        // Expiry Date:  05-06-2021
+        return "Expiry Date:[\\t ]+([0-9\\-]+)";
     }
 
     @Override
     public String getFormatExpiryDate() {
-        return null;
+        return "dd-MM-yyyy";
     }
 
     @Override
     public String getRegexUpdatedDate() {
+        // No updated date section
         return null;
     }
 

@@ -2,7 +2,7 @@ package com.github.iamdual.parser;
 
 import com.github.iamdual.parser.scanner.Availability;
 import com.github.iamdual.parser.scanner.ExpiryDate;
-import com.github.iamdual.parser.scanner.UpdateDate;
+import com.github.iamdual.parser.scanner.UpdatedDate;
 import com.github.iamdual.templates.Template;
 
 import java.io.IOException;
@@ -39,8 +39,8 @@ public class Parser {
         ExpiryDate expiryDate = new ExpiryDate(template, whoisResponse);
         this.result.setExpiryDate(expiryDate.getExpiryDate());
 
-        UpdateDate updateDate = new UpdateDate(template, whoisResponse);
-        this.result.setUpdateDate(updateDate.getUpdateDate());
+        UpdatedDate updatedDate = new UpdatedDate(template, whoisResponse);
+        this.result.setUpdatedDate(updatedDate.getUpdatedDate());
 
         return this.result;
     }

@@ -14,7 +14,7 @@ import java.net.Proxy;
 
 public class Socket implements Adapter {
 
-    protected static int TIMEOUT = 10000;
+    protected static int TIMEOUT = 30000;
 
     protected String whoisServer;
     protected String domain;
@@ -58,6 +58,6 @@ public class Socket implements Adapter {
             throw new IOException("WHOIS response is empty.");
         }
 
-        return this.response.trim();
+        return this.response;
     }
 }

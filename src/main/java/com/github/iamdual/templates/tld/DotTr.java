@@ -1,42 +1,41 @@
-package com.github.iamdual.templates;
+package com.github.iamdual.templates.tld;
 
-import com.github.iamdual.adapter.Adapter;
+
+import com.github.iamdual.templates.DefaultTemplate;
 
 /**
- * Default WHOIS pattern template.
+ * A WHOIS pattern of .tr TLD.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DefaultTemplate implements Template {
-    @Override
-    public Adapter.Type getAdapterType() {
-        return Adapter.Type.SOCKET;
-    }
+public class DotTr extends DefaultTemplate {
 
     @Override
     public String getWhoisServer() {
-        return null;
+        return "whois.nic.tr";
     }
 
     @Override
     public String getRegexAvailable() {
-        return null;
+        return "^No match found for \"";
     }
 
     @Override
     public String getRegexExpiryDate() {
-        return null;
+        // Expires on..: 2021-Dec-07.
+        return "Expires on[\\.]+:[\t ]+([0-9A-Za-z\\-]+)\\.";
     }
 
     @Override
     public String getFormatExpiryDate() {
-        return null;
+        return "yyyy-MMM-dd";
     }
 
     @Override
     public String getRegexUpdatedDate() {
+        // No updated date section
         return null;
     }
 

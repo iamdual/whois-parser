@@ -16,11 +16,11 @@ public interface Adapter {
         HTTP
     }
 
-    public void setWhoisServer(String server);
+    void setWhoisServer(String server);
 
-    public void setDomain(String domain);
+    void setDomain(String domain);
 
-    public void setProxy(Proxy proxy);
+    void setProxy(Proxy proxy);
 
-    public String getWhoisResponse() throws IOException;
+    String getWhoisResponse() throws IOException;
 }

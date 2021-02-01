@@ -1,7 +1,6 @@
 package com.github.iamdual.templates.registrar;
 
-
-import com.github.iamdual.templates.DefaultTemplate;
+import com.github.iamdual.templates.common.CommonDate1;
 
 /**
  * A WHOIS pattern of Google registrar.
@@ -10,7 +9,7 @@ import com.github.iamdual.templates.DefaultTemplate;
  * @license: Apache-2.0 License
  */
 
-public class Google extends DefaultTemplate {
+public class Google extends CommonDate1 {
     @Override
     public String getWhoisServer() {
         return "whois.nic.google";
@@ -19,25 +18,5 @@ public class Google extends DefaultTemplate {
     @Override
     public String getRegexAvailable() {
         return "^Domain not found\\.";
-    }
-
-    @Override
-    public String getRegexExpiryDate() {
-        return "Registry Expiry Date: ([0-9A-Z\\-:]+)";
-    }
-
-    @Override
-    public String getFormatExpiryDate() {
-        return "yyyy-MM-dd'T'HH:mm:ss'Z'";
-    }
-
-    @Override
-    public String getRegexUpdateDate() {
-        return "Updated Date: ([0-9A-Z\\-:]+)";
-    }
-
-    @Override
-    public String getFormatUpdateDate() {
-        return "yyyy-MM-dd'T'HH:mm:ss'Z'";
     }
 }

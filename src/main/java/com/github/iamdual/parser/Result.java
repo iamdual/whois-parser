@@ -14,7 +14,7 @@ public class Result {
     protected String whoisResponse;
     protected Boolean isAvailable;
     protected Date expiryDate;
-    protected Date updateDate;
+    protected Date updatedDate;
 
     public String getWhoisServer() {
         return whoisServer;
@@ -48,12 +48,12 @@ public class Result {
         this.expiryDate = expiryDate;
     }
 
-    public Date getUpdateDate() {
-        return updateDate;
+    public Date getUpdatedDate() {
+        return updatedDate;
     }
 
-    public void setUpdateDate(Date updateDate) {
-        this.updateDate = updateDate;
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
     }
 
 }

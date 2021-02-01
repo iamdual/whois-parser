@@ -10,17 +10,17 @@ import com.github.iamdual.adapter.Adapter;
  */
 
 public interface Template {
-    public Adapter.Type getAdapterType();
+    Adapter.Type getAdapterType();
 
-    public String getWhoisServer();
+    String getWhoisServer();
 
-    public String getRegexAvailable();
+    String getRegexAvailable();
 
-    public String getRegexExpiryDate();
+    String getRegexExpiryDate();
 
-    public String getFormatExpiryDate();
+    String getFormatExpiryDate();
 
-    public String getRegexUpdateDate();
+    String getRegexUpdatedDate();
 
-    public String getFormatUpdateDate();
+    String getFormatUpdatedDate();
 }

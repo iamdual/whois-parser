@@ -4,7 +4,6 @@ import com.github.iamdual.templates.Template;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,13 +20,16 @@ public class ExpiryDate extends Scanner {
     }
 
     public Date getExpiryDate() {
+        if (template.getRegexExpiryDate() == null || template.getFormatExpiryDate() == null) {
+            return null;
+        }
+
         Pattern pattern = Pattern.compile(template.getRegexExpiryDate());
         Matcher matcher = pattern.matcher(whoisResponse);
 
         if (matcher.find()) {
             try {
                 SimpleDateFormat date = new SimpleDateFormat(template.getFormatExpiryDate());
-                date.setTimeZone(TimeZone.getTimeZone("UTC"));
                 if (matcher.groupCount() < 1) {
                     return null;
                 }

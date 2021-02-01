@@ -18,8 +18,12 @@ public class Availability extends Scanner {
     }
 
     public Boolean getAvailable() {
+        if (template.getRegexAvailable() == null) {
+            return null;
+        }
+
         Pattern pattern = Pattern.compile(template.getRegexAvailable());
-        Matcher matcher = pattern.matcher(whoisResponse);
+        Matcher matcher = pattern.matcher(whoisResponse.trim());
 
         return matcher.find();
     }
