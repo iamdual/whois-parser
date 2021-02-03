@@ -19,7 +19,7 @@ public class DotIt extends DefaultTemplate {
 
     @Override
     public String getRegexAvailable() {
-        return "Status:[\\t ]AVAILABLE";
+        return "Status:[\\t ]+AVAILABLE";
     }
 
     @Override

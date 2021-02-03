@@ -34,7 +34,7 @@ public class WhoisParser {
 
     public Result lookup() throws UnsupportedTldException, InvalidDomainException, InvalidAdapterException, IOException {
         TemplateFactory templateFactory = new TemplateFactory();
-        Template template = templateFactory.getTemplate(domain);
+        Template template = templateFactory.getTemplate(Utils.getDomainTld(domain));
         AdapterFactory adapterFactory = new AdapterFactory();
         Adapter adapter = adapterFactory.getAdapter(template);
         adapter.setDomain(domain);

@@ -17,6 +17,11 @@ public class DotJp extends DefaultTemplate {
     }
 
     @Override
+    public String getQueryTemplate() {
+        return "%s/e";
+    }
+
+    @Override
     public String getRegexAvailable() {
         return "No match!!";
     }

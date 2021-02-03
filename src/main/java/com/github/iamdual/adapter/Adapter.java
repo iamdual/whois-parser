@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.Proxy;
 
 /**
- * The main adapter class.
+ * The main adapter class for WHOIS response.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License

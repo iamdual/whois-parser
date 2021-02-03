@@ -1,12 +1,13 @@
 package com.github.iamdual.templates;
 
-import com.github.iamdual.Utils;
-import com.github.iamdual.exceptions.InvalidDomainException;
 import com.github.iamdual.exceptions.UnsupportedTldException;
 import com.github.iamdual.templates.registrar.Afilias;
 import com.github.iamdual.templates.registrar.Google;
 import com.github.iamdual.templates.registrar.Verisign;
 import com.github.iamdual.templates.tld.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The factory of template for WHOIS patterns.
@@ -16,113 +17,79 @@ import com.github.iamdual.templates.tld.*;
  */
 
 public class TemplateFactory {
-    public Template getTemplate(String domain) throws UnsupportedTldException, InvalidDomainException {
-        String tld = Utils.getDomainTld(domain);
+    private static final Map<String, Template> tmpl = new HashMap<>();
 
-        switch (tld) {
-            case "com":
-            case "net":
-                return new Verisign();
-            case "org":
-                return new DotOrg();
-            case "app":
-            case "dev":
-            case "page":
-            case "new":
-            case "how":
-            case "soy":
-                return new Google();
-            case "info":
-            case "mobi":
-            case "pro":
-            case "bet":
-                return new Afilias();
-            case "uk":
-                return new DotUk();
-            case "ca":
-                return new DotCa();
-            case "us":
-                return new DotUs();
-            case "kr":
-                return new DotKr();
-            case "jp":
-                return new DotJp();
-            case "cn":
-                return new DotCn();
-            case "hk":
-                return new DotHk();
-            case "ru":
-                return new DotRu();
-            case "de":
-                return new DotDe();
-            case "fr":
-                return new DotFr();
-            case "io":
-                return new DotIo();
-            case "co":
-                return new DotCo();
-            case "me":
-                return new DotMe();
-            case "biz":
-                return new DotBiz();
-            case "tv":
-                return new DotTv();
-            case "cc":
-                return new DotCc();
-            case "in":
-                return new DotIn();
-            case "fm":
-                return new DotFm();
-            case "sk":
-                return new DotSk();
-            case "cz":
-                return new DotCz();
-            case "it":
-                return new DotIt();
-            case "il":
-                return new DotIl();
-            case "tr":
-                return new DotTr();
-            case "jobs":
-                return new DotJobs();
-            case "company":
-                return new DotCompany();
-            case "digital":
-                return new DotDigital();
-            case "capital":
-                return new DotCapital();
-            case "guru":
-                return new DotGuru();
-            case "shoes":
-                return new DotShoes();
-            case "services":
-                return new DotServices();
-            case "clothing":
-                return new DotClothing();
-            case "news":
-                return new DotNews();
-            case "media":
-                return new DotMedia();
-            case "market":
-                return new DotMarket();
-            case "zone":
-                return new DotZone();
-            case "xyz":
-                return new DotXyz();
-            case "online":
-                return new DotOnline();
-            case "tech":
-                return new DotTech();
-            case "store":
-                return new DotStore();
-            case "site":
-                return new DotSite();
-            case "shop":
-                return new DotShop();
-            case "blog":
-                return new DotBlog();
-            default:
-                throw new UnsupportedTldException(tld);
+    static {
+        tmpl.put("com", new Verisign());
+        tmpl.put("net", new Verisign());
+        tmpl.put("org", new DotOrg());
+        tmpl.put("app", new Google());
+        tmpl.put("dev", new Google());
+        tmpl.put("page", new Google());
+        tmpl.put("new", new Google());
+        tmpl.put("how", new Google());
+        tmpl.put("soy", new Google());
+        tmpl.put("info", new Afilias());
+        tmpl.put("mobi", new Afilias());
+        tmpl.put("pro", new Afilias());
+        tmpl.put("bet", new Afilias());
+        tmpl.put("uk", new DotUk());
+        tmpl.put("ca", new DotCa());
+        tmpl.put("us", new DotUs());
+        tmpl.put("kr", new DotKr());
+        tmpl.put("jp", new DotJp());
+        tmpl.put("cn", new DotCn());
+        tmpl.put("hk", new DotHk());
+        tmpl.put("ru", new DotRu());
+        tmpl.put("de", new DotDe());
+        tmpl.put("fr", new DotFr());
+        tmpl.put("io", new DotIo());
+        tmpl.put("co", new DotCo());
+        tmpl.put("me", new DotMe());
+        tmpl.put("biz", new DotBiz());
+        tmpl.put("tv", new DotTv());
+        tmpl.put("cc", new DotCc());
+        tmpl.put("in", new DotIn());
+        tmpl.put("fm", new DotFm());
+        tmpl.put("sk", new DotSk());
+        tmpl.put("cz", new DotCz());
+        tmpl.put("it", new DotIt());
+        tmpl.put("il", new DotIl());
+        tmpl.put("tr", new DotTr());
+        tmpl.put("jobs", new DotJobs());
+        tmpl.put("company", new DotCompany());
+        tmpl.put("digital", new DotDigital());
+        tmpl.put("capital", new DotCapital());
+        tmpl.put("guru", new DotGuru());
+        tmpl.put("shoes", new DotShoes());
+        tmpl.put("services", new DotServices());
+        tmpl.put("clothing", new DotClothing());
+        tmpl.put("news", new DotNews());
+        tmpl.put("media", new DotMedia());
+        tmpl.put("market", new DotMarket());
+        tmpl.put("zone", new DotZone());
+        tmpl.put("xyz", new DotXyz());
+        tmpl.put("online", new DotOnline());
+        tmpl.put("tech", new DotTech());
+        tmpl.put("store", new DotStore());
+        tmpl.put("site", new DotSite());
+        tmpl.put("shop", new DotShop());
+        tmpl.put("blog", new DotBlog());
+    }
+
+    public Template getTemplate(String tld) throws UnsupportedTldException {
+        Template template = tmpl.get(tld);
+        if (template != null) {
+            return template;
         }
+        throw new UnsupportedTldException(tld);
+    }
+
+    public Map<String, Template> getTemplates() {
+        return tmpl;
+    }
+
+    public void registerTemplate(String tld, Template template) {
+        tmpl.put(tld, template);
     }
 }

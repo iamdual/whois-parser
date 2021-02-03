@@ -13,22 +13,22 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class ExpiryDateTest extends Data {
+class UpdatedDateTest extends Data {
 
     @Test
-    void validateExpiryDate() throws UnsupportedTldException, IOException {
+    void validateUpdatedDate() throws UnsupportedTldException, IOException {
         for (String tld : cached.keySet()) {
-            System.out.println("-> validateExpiryDate has started for " + tld + "..");
+            System.out.println("-> validateUpdatedDate has started for " + tld + "..");
             String whoisResponse = cached.get(tld);
             TemplateFactory templateFactory = new TemplateFactory();
             Template template = templateFactory.getTemplate(tld);
-            if (template.getRegexExpiryDate() == null) {
+            if (template.getRegexUpdatedDate() == null) {
                 continue;
             }
             Parser parser = new Parser(template, whoisResponse);
             Result result = parser.getResult();
-            assertNotNull(result.getExpiryDate());
-            assertTrue(result.getExpiryDate().getTime() > new Date().getTime());
+            assertNotNull(result.getUpdatedDate());
+            assertTrue(result.getUpdatedDate().getTime() <= new Date().getTime());
         }
     }
 }
