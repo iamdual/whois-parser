@@ -21,6 +21,11 @@ public class DefaultTemplate implements Template {
     }
 
     @Override
+    public String getQueryTemplate() {
+        return null;
+    }
+
+    @Override
     public String getRegexAvailable() {
         return null;
     }

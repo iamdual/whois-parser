@@ -14,6 +14,8 @@ public interface Template {
 
     String getWhoisServer();
 
+    String getQueryTemplate();
+
     String getRegexAvailable();
 
     String getRegexExpiryDate();

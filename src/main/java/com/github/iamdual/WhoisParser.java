@@ -24,7 +24,7 @@ public class WhoisParser {
     protected String domain;
     protected Proxy proxy;
 
-    public void setDomain(String domain) {
+    public WhoisParser(String domain) {
         this.domain = domain;
     }
 
@@ -36,8 +36,7 @@ public class WhoisParser {
         TemplateFactory templateFactory = new TemplateFactory();
         Template template = templateFactory.getTemplate(domain);
         AdapterFactory adapterFactory = new AdapterFactory();
-        Adapter adapter = adapterFactory.getAdapter(template.getAdapterType());
-        adapter.setWhoisServer(template.getWhoisServer());
+        Adapter adapter = adapterFactory.getAdapter(template);
         adapter.setDomain(domain);
         adapter.setProxy(proxy);
         Parser parser = new Parser(template, adapter.getWhoisResponse());

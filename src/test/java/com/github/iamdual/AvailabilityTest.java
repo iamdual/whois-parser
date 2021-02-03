@@ -9,11 +9,10 @@ import static org.junit.Assert.assertTrue;
 public class AvailabilityTest {
 
     @Test
-    public void domainIsNotAvailable() throws Exception {
+    public void domainIsNotAvailable() {
         for (String tld : Data.DomainExtensions) {
             try {
-                WhoisParser whoisParser = new WhoisParser();
-                whoisParser.setDomain("google." + tld);
+                WhoisParser whoisParser = new WhoisParser("google." + tld);
                 Result result = whoisParser.lookup();
                 assertFalse(result.getAvailable());
             } catch (Exception e) {
@@ -24,11 +23,10 @@ public class AvailabilityTest {
     }
 
     @Test
-    public void domainIsAvailable() throws Exception {
+    public void domainIsAvailable() {
         for (String tld : Data.DomainExtensions) {
             try {
-                WhoisParser whoisParser = new WhoisParser();
-                whoisParser.setDomain("shouldnotexists0248." + tld);
+                WhoisParser whoisParser = new WhoisParser("google." + tld);
                 Result result = whoisParser.lookup();
                 assertTrue(result.getAvailable());
             } catch (Exception e) {

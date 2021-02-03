@@ -1,6 +1,7 @@
 package com.github.iamdual.adapter;
 
 import com.github.iamdual.exceptions.InvalidAdapterException;
+import com.github.iamdual.templates.Template;
 
 /**
  * The factory of WHOIS request adapter.
@@ -10,14 +11,14 @@ import com.github.iamdual.exceptions.InvalidAdapterException;
  */
 
 public class AdapterFactory {
-    public Adapter getAdapter(Adapter.Type adapterType) throws InvalidAdapterException {
-        switch (adapterType) {
+    public Adapter getAdapter(Template template) throws InvalidAdapterException {
+        switch (template.getAdapterType()) {
             case SOCKET:
-                return new Socket();
+                return new Socket(template);
             case HTTP:
-                return new HTTP();
+                return new HTTP(template);
             default:
-                throw new InvalidAdapterException(adapterType);
+                throw new InvalidAdapterException(template.getAdapterType());
         }
     }
 }

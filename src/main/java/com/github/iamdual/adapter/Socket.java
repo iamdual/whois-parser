@@ -1,9 +1,9 @@
 package com.github.iamdual.adapter;
 
+import com.github.iamdual.templates.Template;
 import org.apache.commons.net.whois.WhoisClient;
 
 import java.io.IOException;
-import java.net.Proxy;
 
 /**
  * The socket adapter.
@@ -12,31 +12,14 @@ import java.net.Proxy;
  * @license: Apache-2.0 License
  */
 
-public class Socket implements Adapter {
+public class Socket extends Adapter {
 
     protected static int TIMEOUT = 30000;
 
-    protected String whoisServer;
-    protected String domain;
-    protected Proxy proxy;
-    protected String response;
-
-    @Override
-    public void setWhoisServer(String server) {
-        this.whoisServer = server;
+    public Socket(Template template) {
+        super(template);
     }
 
-    @Override
-    public void setDomain(String domain) {
-        this.domain = domain;
-    }
-
-    @Override
-    public void setProxy(Proxy proxy) {
-        this.proxy = proxy;
-    }
-
-    @Override
     public String getWhoisResponse() throws IOException {
         if (this.response != null) {
             return this.response;
@@ -49,9 +32,9 @@ public class Socket implements Adapter {
         whois.setDefaultTimeout(TIMEOUT);
         whois.setConnectTimeout(TIMEOUT);
 
-        whois.connect(whoisServer);
+        whois.connect(template.getWhoisServer());
         whois.setSoTimeout(TIMEOUT);
-        this.response = whois.query(domain);
+        this.response = whois.query(getSocketQuery());
         whois.disconnect();
 
         if (this.response == null || this.response.length() == 0) {
@@ -59,5 +42,13 @@ public class Socket implements Adapter {
         }
 
         return this.response;
+    }
+
+    private String getSocketQuery() {
+        if (template.getQueryTemplate() != null) {
+            return String.format(template.getQueryTemplate(), domain);
+        }
+
+        return domain;
     }
 }

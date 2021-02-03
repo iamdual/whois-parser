@@ -1,26 +1,42 @@
 package com.github.iamdual.adapter;
 
+import com.github.iamdual.templates.Template;
+
 import java.io.IOException;
 import java.net.Proxy;
 
 /**
- * The interface of WHOIS request adapter.
+ * The main adapter class.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public interface Adapter {
-    enum Type {
+public abstract class Adapter {
+    protected Template template;
+    protected String domain;
+    protected Proxy proxy;
+    protected String response;
+
+    public enum Type {
         SOCKET,
         HTTP
     }
 
-    void setWhoisServer(String server);
+    public Adapter(Template template) {
+        this.template = template;
+    }
 
-    void setDomain(String domain);
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
 
-    void setProxy(Proxy proxy);
+    public void setProxy(Proxy proxy) {
+        this.proxy = proxy;
+    }
 
-    String getWhoisResponse() throws IOException;
+    public String getWhoisResponse() throws IOException {
+        return null;
+    }
+
 }

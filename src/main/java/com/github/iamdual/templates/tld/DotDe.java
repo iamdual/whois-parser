@@ -18,6 +18,12 @@ public class DotDe extends DefaultTemplate {
     }
 
     @Override
+    public String getQueryTemplate() {
+        // https://www.denic.de/en/service/whois-service/
+        return "-T dn %s";
+    }
+
+    @Override
     public String getRegexAvailable() {
         return "Status: free$";
     }
