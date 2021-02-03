@@ -19,15 +19,17 @@ abstract class Data {
     public static final Map<String, String> cached = new HashMap<>();
 
     // Some domain registrars are blocks requests due so many requests and it causes tests fail.
-    public static final String[] exceptions = {"market", "media", "services", "shoes", "clothes", "tr"};
+    public static final String[] exclusions = {
+            "market", "media", "services", "shoes", "clothes", "cz", "tr"
+    };
 
     static {
         TemplateFactory templateFactory = new TemplateFactory();
         for (String tld : templateFactory.getTemplates().keySet()) {
-            if (Arrays.asList(exceptions).contains(tld)) {
+            if (Arrays.asList(exclusions).contains(tld)) {
                 continue;
             }
-            System.out.println("-> Caching has started for " + tld);
+            System.out.println("-> Caching has started for " + tld + "..");
             try {
                 Template template = templateFactory.getTemplate(tld);
                 AdapterFactory adapterFactory = new AdapterFactory();
