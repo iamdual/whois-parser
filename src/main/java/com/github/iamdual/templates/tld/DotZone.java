@@ -1,7 +1,7 @@
 package com.github.iamdual.templates.tld;
 
 
-import com.github.iamdual.templates.common.CommonDate1;
+import com.github.iamdual.templates.registrar.Donut;
 
 /**
  * A WHOIS pattern of .zone TLD.
@@ -10,14 +10,9 @@ import com.github.iamdual.templates.common.CommonDate1;
  * @license: Apache-2.0 License
  */
 
-public class DotZone extends CommonDate1 {
+public class DotZone extends Donut {
     @Override
     public String getWhoisServer() {
         return "whois.nic.zone";
-    }
-
-    @Override
-    public String getRegexAvailable() {
-        return "^Domain not found\\.";
     }
 }

@@ -1,7 +1,7 @@
 package com.github.iamdual.templates.tld;
 
 
-import com.github.iamdual.templates.common.CommonDate1;
+import com.github.iamdual.templates.registrar.Donut;
 
 /**
  * A WHOIS pattern of .clothing TLD.
@@ -10,14 +10,9 @@ import com.github.iamdual.templates.common.CommonDate1;
  * @license: Apache-2.0 License
  */
 
-public class DotClothing extends CommonDate1 {
+public class DotClothing extends Donut {
     @Override
     public String getWhoisServer() {
         return "whois.nic.clothing";
-    }
-
-    @Override
-    public String getRegexAvailable() {
-        return "^Domain not found\\.";
     }
 }

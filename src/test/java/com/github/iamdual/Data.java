@@ -20,7 +20,8 @@ abstract class Data {
 
     // Some domain registrars are blocks requests due so many requests and it causes tests fail.
     public static final String[] exclusions = {
-            "market", "media", "services", "shoes", "clothes", "cz", "tr"
+            "clothing", "digital", "market", "media", "news", "online", "services", "shoes",
+            "clothes", "services", "zone", "cz", "tr"
     };
 
     static {
@@ -46,10 +47,10 @@ abstract class Data {
     static String anAvailableName(String tld) {
         // Some domain names are restricted for register.
         switch (tld) {
-            case "cz":
             case "capital":
             case "clothing":
             case "company":
+            case "cz":
             case "digital":
             case "guru":
             case "media":
@@ -65,17 +66,17 @@ abstract class Data {
 
     static String aProperExtension(String tld) {
         switch (tld) {
-            case "uk":
-                tld = "co.uk";
-                break;
+            case "br":
+                return "com.br";
             case "il":
-                tld = "co.il";
-                break;
+                return "co.il";
             case "tr":
-                tld = "com.tr";
-                break;
+                return "com.tr";
+            case "uk":
+                return "co.uk";
+            default:
+                return tld;
         }
-        return tld;
     }
 
     static String aProperDomain(String tld) {
