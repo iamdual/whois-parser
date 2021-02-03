@@ -44,6 +44,7 @@ abstract class Data {
     static String anAvailableName(String tld) {
         // Some domain names are restricted for register.
         switch (tld) {
+            case "cz":
             case "capital":
             case "clothing":
             case "company":

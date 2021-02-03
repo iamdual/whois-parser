@@ -18,7 +18,7 @@ public class DotRu extends DefaultTemplate {
 
     @Override
     public String getRegexAvailable() {
-        return "^The domain has not been registered\\.";
+        return "No entries found for the selected source\\(s\\)\\.";
     }
 
     @Override
