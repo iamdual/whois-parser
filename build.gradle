@@ -31,7 +31,9 @@ test {
 // gradlew clean singleTest -Dtld=com
 task singleTest(type: Test) {
     def tld = System.getProperty("tld")
-    println("Single test has started for $tld..")
-    systemProperty "tld", tld
-    useJUnitPlatform()
+    if (tld) {
+        println("Single test has started for $tld..")
+        systemProperty "tld", tld
+        useJUnitPlatform()
+    }
 }
