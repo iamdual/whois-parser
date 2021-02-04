@@ -25,6 +25,7 @@ public class TemplateFactory {
         tmpl.put("app", new Google());
         tmpl.put("ar", new DotAr());
         tmpl.put("at", new DotAt());
+        tmpl.put("au", new DotAu());
         tmpl.put("best", new DotBest());
         tmpl.put("bet", new Afilias());
         tmpl.put("biz", new DotBiz());
@@ -49,10 +50,12 @@ public class TemplateFactory {
         tmpl.put("guru", new DotGuru());
         tmpl.put("hk", new DotHk());
         tmpl.put("how", new Google());
+        tmpl.put("id", new DotId());
         tmpl.put("il", new DotIl());
         tmpl.put("in", new DotIn());
         tmpl.put("info", new Afilias());
         tmpl.put("io", new DotIo());
+        tmpl.put("ir", new DotIr());
         tmpl.put("it", new DotIt());
         tmpl.put("jobs", new DotJobs());
         tmpl.put("jp", new DotJp());
@@ -69,6 +72,7 @@ public class TemplateFactory {
         tmpl.put("news", new DotNews());
         tmpl.put("nl", new DotNl());
         tmpl.put("no", new DotNo());
+        tmpl.put("nz", new DotNz());
         tmpl.put("one", new DotOne());
         tmpl.put("online", new DotOnline());
         tmpl.put("org", new DotOrg());
@@ -87,6 +91,7 @@ public class TemplateFactory {
         tmpl.put("store", new DotStore());
         tmpl.put("su", new DotRu());
         tmpl.put("tech", new DotTech());
+        tmpl.put("th", new DotTh());
         tmpl.put("tr", new DotTr());
         tmpl.put("trade", new DotTrade());
         tmpl.put("travel", new DotTravel());

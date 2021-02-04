@@ -60,7 +60,6 @@ abstract class Data {
             case "capital":
             case "clothing":
             case "company":
-            case "cz":
             case "digital":
             case "guru":
             case "life":
@@ -78,10 +77,14 @@ abstract class Data {
 
     static String aProperExtension(String tld) {
         switch (tld) {
+            case "au":
+                return "com.au";
             case "br":
                 return "com.br";
             case "il":
                 return "co.il";
+            case "nz":
+                return "co.nz";
             case "tr":
                 return "com.tr";
             case "uk":
