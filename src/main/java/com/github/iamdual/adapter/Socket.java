@@ -45,8 +45,8 @@ public class Socket extends Adapter {
     }
 
     private String getSocketQuery() {
-        if (template.getQueryTemplate() != null) {
-            return String.format(template.getQueryTemplate(), domain);
+        if (template.getQueryFormat() != null) {
+            return String.format(template.getQueryFormat(), domain);
         }
 
         return domain;

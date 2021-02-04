@@ -2,6 +2,8 @@ package com.github.iamdual.adapter;
 
 import com.github.iamdual.templates.Template;
 
+import java.io.IOException;
+
 /**
  * The HTTP adapter.
  *
@@ -15,12 +17,12 @@ public class HTTP extends Adapter {
         super(template);
     }
 
-    public String getWhoisResponse() {
+    public String getWhoisResponse() throws IOException {
         if (this.response != null) {
             return this.response;
         }
 
         // TODO: Implement a HTTP client.
-        return null;
+        throw new IOException("HTTP adapter is not implemented yet.");
     }
 }

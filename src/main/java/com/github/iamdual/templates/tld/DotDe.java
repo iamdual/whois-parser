@@ -18,7 +18,7 @@ public class DotDe extends DefaultTemplate {
     }
 
     @Override
-    public String getQueryTemplate() {
+    public String getQueryFormat() {
         // https://www.denic.de/en/service/whois-service/
         return "-T dn %s";
     }
@@ -30,7 +30,7 @@ public class DotDe extends DefaultTemplate {
 
     @Override
     public String getRegexExpiryDate() {
-        // No expiry date section
+        // No expiry date section.
         return null;
     }
 

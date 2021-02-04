@@ -4,43 +4,48 @@ package com.github.iamdual.templates.tld;
 import com.github.iamdual.templates.DefaultTemplate;
 
 /**
- * A WHOIS pattern of .tr TLD.
+ * A WHOIS pattern of .name TLD.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DotTr extends DefaultTemplate {
+public class DotName extends DefaultTemplate {
 
     @Override
     public String getWhoisServer() {
-        return "whois.nic.tr";
+        return "whois.nic.name";
+    }
+
+    @Override
+    public String getQueryFormat() {
+        return "domain=%s";
     }
 
     @Override
     public String getRegexAvailable() {
-        return "^No match found for \"";
+        return "No match for domain \".+";
     }
 
     @Override
     public String getRegexExpiryDate() {
-        // Expires on..: 2021-Dec-07.
-        return "Expires on[\\.]+:[\t ]+([0-9A-Za-z\\-]+)\\.";
+        // Expires On: 2022-01-14T16:58:23Z
+        return "Expires On: ([0-9A-Z\\-:]+)";
     }
 
     @Override
     public String getFormatExpiryDate() {
-        return "yyyy-MMM-dd";
+        return "yyyy-MM-dd'T'HH:mm:ss'Z'";
     }
 
     @Override
     public String getRegexUpdatedDate() {
-        // No updated date section.
-        return null;
+        // Updated On: 2020-12-11T07:55:34Z
+        return "Updated On: ([0-9A-Z\\-:]+)";
     }
 
     @Override
     public String getFormatUpdatedDate() {
-        return null;
+        return "yyyy-MM-dd'T'HH:mm:ss'Z'";
     }
 }

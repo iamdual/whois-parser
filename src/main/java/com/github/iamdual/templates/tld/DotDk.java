@@ -4,33 +4,33 @@ package com.github.iamdual.templates.tld;
 import com.github.iamdual.templates.DefaultTemplate;
 
 /**
- * A WHOIS pattern of .tr TLD.
+ * A WHOIS pattern of .dk TLD.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DotTr extends DefaultTemplate {
+public class DotDk extends DefaultTemplate {
 
     @Override
     public String getWhoisServer() {
-        return "whois.nic.tr";
+        return "whois.dk-hostmaster.dk";
     }
 
     @Override
     public String getRegexAvailable() {
-        return "^No match found for \"";
+        return "No entries found for the selected source\\.";
     }
 
     @Override
     public String getRegexExpiryDate() {
-        // Expires on..: 2021-Dec-07.
-        return "Expires on[\\.]+:[\t ]+([0-9A-Za-z\\-]+)\\.";
+        // Expires:  2021-08-31
+        return "Expires:[\\t ]+([0-9\\-]+)";
     }
 
     @Override
     public String getFormatExpiryDate() {
-        return "yyyy-MMM-dd";
+        return "yyyy-MM-dd";
     }
 
     @Override

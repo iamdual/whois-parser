@@ -4,43 +4,43 @@ package com.github.iamdual.templates.tld;
 import com.github.iamdual.templates.DefaultTemplate;
 
 /**
- * A WHOIS pattern of .tr TLD.
+ * A WHOIS pattern of .ar TLD.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DotTr extends DefaultTemplate {
+public class DotAr extends DefaultTemplate {
 
     @Override
     public String getWhoisServer() {
-        return "whois.nic.tr";
+        return "whois.nic.ar";
     }
 
     @Override
     public String getRegexAvailable() {
-        return "^No match found for \"";
+        return "El dominio no se encuentra registrado en NIC Argentina";
     }
 
     @Override
     public String getRegexExpiryDate() {
-        // Expires on..: 2021-Dec-07.
-        return "Expires on[\\.]+:[\t ]+([0-9A-Za-z\\-]+)\\.";
+        // expire:  2021-11-01 00:00:00
+        return "expire:[\\t ]+([0-9\\-: ]+)";
     }
 
     @Override
     public String getFormatExpiryDate() {
-        return "yyyy-MMM-dd";
+        return "yyyy-MM-dd HH:mm:ss";
     }
 
     @Override
     public String getRegexUpdatedDate() {
-        // No updated date section.
-        return null;
+        // changed:  2020-10-13 17:45:16.825672
+        return "changed:[\\t ]+([0-9\\-: ]+)";
     }
 
     @Override
     public String getFormatUpdatedDate() {
-        return null;
+        return "yyyy-MM-dd HH:mm:ss";
     }
 }

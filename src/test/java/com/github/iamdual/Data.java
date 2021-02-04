@@ -8,26 +8,36 @@ import com.github.iamdual.templates.Template;
 import com.github.iamdual.templates.TemplateFactory;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 abstract class Data {
 
-    public static final Map<String, String> cached = new HashMap<>();
+    static final Map<String, String> cached = new HashMap<>();
 
     // Some domain registrars are blocks requests due so many requests and it causes tests fail.
-    public static final String[] exclusions = {
-            "clothing", "digital", "market", "media", "news", "online", "services", "shoes",
-            "clothes", "services", "zone", "cz", "tr"
+    // It's also prevent sending extra requests for the same template with the same servers.
+    static final String[] exclusions = {
+            "clothing", "company", "digital", "market", "media", "news", "online", "services", "shoes", "services", "zone",
+            "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "cz", "tr"
     };
+
+    static Boolean singleTest = false;
 
     static {
         TemplateFactory templateFactory = new TemplateFactory();
-        for (String tld : templateFactory.getTemplates().keySet()) {
-            if (Arrays.asList(exclusions).contains(tld)) {
+        Set<String> tldList;
+
+        if (System.getProperty("tld") != null) {
+            singleTest = true;
+            tldList = Collections.singleton(System.getProperty("tld"));
+        } else {
+            tldList = templateFactory.getTemplates().keySet();
+        }
+
+        for (String tld : tldList) {
+            if (!singleTest && Arrays.asList(exclusions).contains(tld)) {
                 continue;
             }
             System.out.println("-> Caching has started for " + tld + "..");
@@ -53,6 +63,8 @@ abstract class Data {
             case "cz":
             case "digital":
             case "guru":
+            case "life":
+            case "live":
             case "media":
             case "news":
             case "services":

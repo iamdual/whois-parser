@@ -34,7 +34,7 @@ public class DotRu extends DefaultTemplate {
 
     @Override
     public String getRegexUpdatedDate() {
-        // No updated date section
+        // No updated date section.
         return null;
     }
 

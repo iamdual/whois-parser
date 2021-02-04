@@ -21,7 +21,7 @@ public class DefaultTemplate implements Template {
     }
 
     @Override
-    public String getQueryTemplate() {
+    public String getQueryFormat() {
         return null;
     }
 

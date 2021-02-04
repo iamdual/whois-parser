@@ -14,7 +14,7 @@ public interface Template {
 
     String getWhoisServer();
 
-    String getQueryTemplate();
+    String getQueryFormat();
 
     String getRegexAvailable();
 

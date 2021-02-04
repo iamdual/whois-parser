@@ -19,7 +19,7 @@ public class DotSe extends DefaultTemplate {
 
     @Override
     public String getRegexAvailable() {
-        return "domain \".+\" not found.";
+        return "domain \".+\" not found\\.";
     }
 
     @Override

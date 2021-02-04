@@ -23,6 +23,8 @@ public class TemplateFactory {
         // Sorted alphabetically
 
         tmpl.put("app", new Google());
+        tmpl.put("ar", new DotAr());
+        tmpl.put("at", new DotAt());
         tmpl.put("best", new DotBest());
         tmpl.put("bet", new Afilias());
         tmpl.put("biz", new DotBiz());
@@ -40,6 +42,7 @@ public class TemplateFactory {
         tmpl.put("de", new DotDe());
         tmpl.put("dev", new Google());
         tmpl.put("digital", new DotDigital());
+        tmpl.put("dk", new DotDk());
         tmpl.put("fun", new DotFun());
         tmpl.put("fm", new DotFm());
         tmpl.put("fr", new DotFr());
@@ -54,13 +57,19 @@ public class TemplateFactory {
         tmpl.put("jobs", new DotJobs());
         tmpl.put("jp", new DotJp());
         tmpl.put("kr", new DotKr());
+        tmpl.put("life", new DotLife());
+        tmpl.put("live", new DotLive());
         tmpl.put("market", new DotMarket());
         tmpl.put("me", new DotMe());
         tmpl.put("media", new DotMedia());
         tmpl.put("mobi", new Afilias());
+        tmpl.put("name", new DotName());
         tmpl.put("net", new Verisign());
         tmpl.put("new", new Google());
         tmpl.put("news", new DotNews());
+        tmpl.put("nl", new DotNl());
+        tmpl.put("no", new DotNo());
+        tmpl.put("one", new DotOne());
         tmpl.put("online", new DotOnline());
         tmpl.put("org", new DotOrg());
         tmpl.put("page", new Google());
@@ -79,6 +88,8 @@ public class TemplateFactory {
         tmpl.put("su", new DotRu());
         tmpl.put("tech", new DotTech());
         tmpl.put("tr", new DotTr());
+        tmpl.put("trade", new DotTrade());
+        tmpl.put("travel", new DotTravel());
         tmpl.put("tv", new DotTv());
         tmpl.put("ua", new DotUa());
         tmpl.put("uk", new DotUk());

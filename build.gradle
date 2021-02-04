@@ -4,7 +4,6 @@ plugins {
 }
 
 group 'com.github.iamdual'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -27,4 +26,12 @@ test {
         events = ["passed", "failed", "skipped"]
         showStandardStreams = true
     }
+}
+
+// gradlew clean singleTest -Dtld=com
+task singleTest(type: Test) {
+    def tld = System.getProperty("tld")
+    println("Single test has started for $tld..")
+    systemProperty "tld", tld
+    useJUnitPlatform()
 }

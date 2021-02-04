@@ -30,7 +30,9 @@ class AvailabilityTest extends Data {
     }
 
     @Test
-    void domainIsAvailable() throws UnsupportedTldException, InvalidAdapterException, IOException, InvalidDomainException {
+    void domainIsAvailable() throws UnsupportedTldException, InvalidAdapterException, IOException, InvalidDomainException, InterruptedException {
+        Thread.sleep(2000);
+
         for (String tld : cached.keySet()) {
             System.out.println("-> domainIsAvailable has started for " + tld + "..");
             WhoisParser whoisParser = new WhoisParser("shouldnotexists0248." + aProperExtension(tld));

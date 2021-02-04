@@ -17,7 +17,7 @@ public class DotJp extends DefaultTemplate {
     }
 
     @Override
-    public String getQueryTemplate() {
+    public String getQueryFormat() {
         return "%s/e";
     }
 
@@ -39,7 +39,7 @@ public class DotJp extends DefaultTemplate {
 
     @Override
     public String getRegexUpdatedDate() {
-        // No updated date section
+        // No updated date section.
         return null;
     }
 
