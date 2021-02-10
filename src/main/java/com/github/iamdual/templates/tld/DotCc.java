@@ -12,7 +12,7 @@ import com.github.iamdual.templates.registrar.Verisign;
 
 public class DotCc extends Verisign {
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "ccwhois.verisign-grs.com";
     }
 }

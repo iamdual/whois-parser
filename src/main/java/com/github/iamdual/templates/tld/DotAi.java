@@ -12,7 +12,7 @@ import com.github.iamdual.templates.DefaultTemplate;
 
 public class DotAi extends DefaultTemplate {
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "whois.nic.ai";
     }
 

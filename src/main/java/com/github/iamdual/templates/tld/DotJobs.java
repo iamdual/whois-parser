@@ -12,7 +12,7 @@ import com.github.iamdual.templates.common.CommonDate1;
 
 public class DotJobs extends CommonDate1 {
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "whois.nic.jobs";
     }
 

@@ -12,7 +12,7 @@ import com.github.iamdual.templates.DefaultTemplate;
 
 public class DotHk extends DefaultTemplate {
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "whois.hkirc.hk";
     }
 

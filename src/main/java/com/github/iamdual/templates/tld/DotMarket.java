@@ -12,7 +12,7 @@ import com.github.iamdual.templates.registrar.Donut;
 
 public class DotMarket extends Donut {
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "whois.nic.market";
     }
 }

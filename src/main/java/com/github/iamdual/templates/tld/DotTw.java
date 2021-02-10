@@ -12,7 +12,7 @@ import com.github.iamdual.templates.DefaultTemplate;
 
 public class DotTw extends DefaultTemplate {
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "whois.twnic.net.tw";
     }
 

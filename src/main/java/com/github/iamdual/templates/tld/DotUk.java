@@ -13,7 +13,7 @@ import com.github.iamdual.templates.DefaultTemplate;
 public class DotUk extends DefaultTemplate {
 
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "whois.nic.uk";
     }
 

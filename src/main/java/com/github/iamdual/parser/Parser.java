@@ -30,7 +30,7 @@ public class Parser {
         }
 
         this.result = new Result();
-        this.result.setWhoisServer(template.getWhoisServer());
+        this.result.setWhoisServer(template.getWhoisAddress());
         this.result.setWhoisResponse(whoisResponse);
 
         Availability availability = new Availability(template, whoisResponse);

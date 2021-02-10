@@ -12,7 +12,7 @@ import com.github.iamdual.templates.DefaultTemplate;
 
 public class DotIl extends DefaultTemplate {
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "whois.isoc.org.il";
     }
 

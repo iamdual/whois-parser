@@ -12,7 +12,7 @@ import com.github.iamdual.templates.registrar.Verisign;
 
 public class DotTv extends Verisign {
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "tvwhois.verisign-grs.com";
     }
 }

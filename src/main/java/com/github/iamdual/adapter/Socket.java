@@ -32,7 +32,7 @@ public class Socket extends Adapter {
         whois.setDefaultTimeout(TIMEOUT);
         whois.setConnectTimeout(TIMEOUT);
 
-        whois.connect(template.getWhoisServer());
+        whois.connect(template.getWhoisAddress());
         whois.setSoTimeout(TIMEOUT);
         this.response = whois.query(getSocketQuery());
         whois.disconnect();

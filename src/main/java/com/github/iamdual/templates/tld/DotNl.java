@@ -13,7 +13,7 @@ import com.github.iamdual.templates.DefaultTemplate;
 public class DotNl extends DefaultTemplate {
 
     @Override
-    public String getWhoisServer() {
+    public String getWhoisAddress() {
         return "whois.domain-registry.nl";
     }
 

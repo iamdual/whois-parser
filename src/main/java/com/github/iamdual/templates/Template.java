@@ -2,8 +2,6 @@ package com.github.iamdual.templates;
 
 import com.github.iamdual.adapter.Adapter;
 
-import java.net.http.HttpRequest;
-
 /**
  * The interface of template for WHOIS patterns.
  *
@@ -14,11 +12,11 @@ import java.net.http.HttpRequest;
 public interface Template {
     Adapter.Type getAdapterType();
 
-    String getWhoisServer();
+    String getHTTPMethod();
+
+    String getWhoisAddress();
 
     String getQueryFormat();
-
-    HttpRequest.Builder getHttpRequestBuilder();
 
     String getRegexAvailable();
 

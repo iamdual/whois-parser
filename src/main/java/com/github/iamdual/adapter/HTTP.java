@@ -2,11 +2,9 @@ package com.github.iamdual.adapter;
 
 import com.github.iamdual.templates.Template;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * The HTTP adapter.
@@ -26,20 +24,48 @@ public class HTTP extends Adapter {
             return this.response;
         }
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest.Builder builder = template.getHttpRequestBuilder();
-        if (template.getQueryFormat() != null) {
-            builder.uri(URI.create(String.format(template.getQueryFormat(), domain)));
-        }
-        HttpRequest request = builder.build();
-        HttpResponse<String> response = null;
-        try {
-            response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (InterruptedException e) {
-            throw new IOException(e.getMessage());
+        String requestURL = template.getWhoisAddress();
+        String queryFormat = template.getQueryFormat();
+
+        if (queryFormat != null) {
+            queryFormat = String.format(template.getQueryFormat(), domain);
         }
 
-        System.out.println(response.body());
-        return response.body();
+        if (template.getHTTPMethod().equals("GET")) {
+            requestURL += queryFormat;
+        }
+
+        HttpURLConnection httpConnection = (HttpURLConnection) new URL(requestURL).openConnection();
+        httpConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
+        httpConnection.setRequestProperty("Referer", requestURL);
+
+        if (!template.getHTTPMethod().equals("GET")) {
+            httpConnection.setDoOutput(true);
+            httpConnection.setRequestMethod(template.getHTTPMethod());
+            httpConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            if (queryFormat != null) {
+                try (OutputStream output = httpConnection.getOutputStream()) {
+                    output.write(queryFormat.getBytes());
+                }
+            }
+        }
+
+        InputStream inputStream = httpConnection.getInputStream();
+
+        StringBuilder stringBuilder = new StringBuilder();
+        try (Reader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            int c;
+            while ((c = reader.read()) != -1) {
+                stringBuilder.append((char) c);
+            }
+        }
+
+        this.response = stringBuilder.toString();
+
+        if (this.response.length() == 0) {
+            throw new IOException("WHOIS response is empty.");
+        }
+
+        return this.response;
     }
 }

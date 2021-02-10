@@ -4,8 +4,6 @@ package com.github.iamdual.templates.tld;
 import com.github.iamdual.adapter.Adapter;
 import com.github.iamdual.templates.DefaultTemplate;
 
-import java.net.http.HttpRequest;
-
 /**
  * A WHOIS pattern of .int TLD.
  *
@@ -20,26 +18,18 @@ public class DotInt extends DefaultTemplate {
     }
 
     @Override
-    public String getWhoisServer() {
-        return "whois.nic.ai";
+    public String getWhoisAddress() {
+        return "https://www.iana.org/whois";
     }
 
     @Override
     public String getQueryFormat() {
-        return "https://www.iana.org/whois?q=%s";
+        return "?q=%s";
     }
 
     @Override
     public String getRegexAvailable() {
         return "This query returned 0 objects\\.";
-    }
-
-    @Override
-    public HttpRequest.Builder getHttpRequestBuilder() {
-        return HttpRequest.newBuilder()
-                .GET()
-                .setHeader("User-Agent", "Mozilla/5.0")
-                .setHeader("Referer", "https://www.iana.org");
     }
 
     @Override

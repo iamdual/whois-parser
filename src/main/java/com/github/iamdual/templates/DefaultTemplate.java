@@ -2,8 +2,6 @@ package com.github.iamdual.templates;
 
 import com.github.iamdual.adapter.Adapter;
 
-import java.net.http.HttpRequest;
-
 /**
  * Default WHOIS pattern template.
  *
@@ -18,17 +16,17 @@ public class DefaultTemplate implements Template {
     }
 
     @Override
-    public String getWhoisServer() {
+    public String getHTTPMethod() {
+        return "GET";
+    }
+
+    @Override
+    public String getWhoisAddress() {
         return null;
     }
 
     @Override
     public String getQueryFormat() {
-        return null;
-    }
-
-    @Override
-    public HttpRequest.Builder getHttpRequestBuilder() {
         return null;
     }
 
