@@ -1,8 +1,4 @@
-plugins {
-    id 'groovy'
-    id 'java'
-}
-
+apply plugin:'java'
 group 'com.github.iamdual'
 
 repositories {
@@ -10,10 +6,7 @@ repositories {
 }
 
 dependencies {
-
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
     compile 'commons-net:commons-net:3.7.2'
-
     def junitVersion = '5.7.0'
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
