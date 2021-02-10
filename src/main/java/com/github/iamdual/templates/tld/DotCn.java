@@ -31,15 +31,4 @@ public class DotCn extends DefaultTemplate {
     public String getFormatExpiryDate() {
         return "yyyy-MM-dd HH:mm:ss";
     }
-
-    @Override
-    public String getRegexUpdatedDate() {
-        // No updated date section.
-        return null;
-    }
-
-    @Override
-    public String getFormatUpdatedDate() {
-        return null;
-    }
 }

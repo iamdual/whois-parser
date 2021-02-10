@@ -23,17 +23,6 @@ public class DotAt extends DefaultTemplate {
     }
 
     @Override
-    public String getRegexExpiryDate() {
-        // No expiry date section.
-        return null;
-    }
-
-    @Override
-    public String getFormatExpiryDate() {
-        return null;
-    }
-
-    @Override
     public String getRegexUpdatedDate() {
         // changed:  20110426 17:57:27
         return "changed:[\\t ]+([0-9: ]+)";

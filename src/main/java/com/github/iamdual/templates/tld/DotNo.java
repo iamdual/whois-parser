@@ -23,17 +23,6 @@ public class DotNo extends DefaultTemplate {
     }
 
     @Override
-    public String getRegexExpiryDate() {
-        // No expiry date section.
-        return null;
-    }
-
-    @Override
-    public String getFormatExpiryDate() {
-        return null;
-    }
-
-    @Override
     public String getRegexUpdatedDate() {
         // Last updated:  2020-12-02
         return "Last updated:[\\t ]+([0-9\\-]+)";

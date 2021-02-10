@@ -29,17 +29,6 @@ public class DotDe extends DefaultTemplate {
     }
 
     @Override
-    public String getRegexExpiryDate() {
-        // No expiry date section.
-        return null;
-    }
-
-    @Override
-    public String getFormatExpiryDate() {
-        return null;
-    }
-
-    @Override
     public String getRegexUpdatedDate() {
         // Changed: 2019-09-24T20:06:12+02:00
         return "Changed: ([0-9A-Z\\-+:]+)";

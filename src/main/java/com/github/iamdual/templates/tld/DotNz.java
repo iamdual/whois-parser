@@ -23,17 +23,6 @@ public class DotNz extends DefaultTemplate {
     }
 
     @Override
-    public String getRegexExpiryDate() {
-        // No expiry date section.
-        return null;
-    }
-
-    @Override
-    public String getFormatExpiryDate() {
-        return null;
-    }
-
-    @Override
     public String getRegexUpdatedDate() {
         // domain_datelastmodified: 2020-08-21T15:27:01+12:00
         return "domain_datelastmodified:[\\t ]+([0-9A-Z\\-+:]+)";

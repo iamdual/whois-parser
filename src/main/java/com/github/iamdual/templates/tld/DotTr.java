@@ -32,15 +32,4 @@ public class DotTr extends DefaultTemplate {
     public String getFormatExpiryDate() {
         return "yyyy-MMM-dd";
     }
-
-    @Override
-    public String getRegexUpdatedDate() {
-        // No updated date section.
-        return null;
-    }
-
-    @Override
-    public String getFormatUpdatedDate() {
-        return null;
-    }
 }

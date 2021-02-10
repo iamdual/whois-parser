@@ -20,8 +20,7 @@ public class TemplateFactory {
     private static final Map<String, Template> tmpl = new HashMap<>();
 
     static {
-        // Sorted alphabetically
-
+        tmpl.put("ai", new DotAi());
         tmpl.put("app", new Google());
         tmpl.put("ar", new DotAr());
         tmpl.put("at", new DotAt());
@@ -55,6 +54,7 @@ public class TemplateFactory {
         tmpl.put("il", new DotIl());
         tmpl.put("in", new DotIn());
         tmpl.put("info", new Afilias());
+        tmpl.put("int", new DotInt());
         tmpl.put("io", new DotIo());
         tmpl.put("ir", new DotIr());
         tmpl.put("it", new DotIt());
@@ -84,6 +84,7 @@ public class TemplateFactory {
         tmpl.put("ru", new DotRu());
         tmpl.put("se", new DotSe());
         tmpl.put("services", new DotServices());
+        tmpl.put("sh", new DotSh());
         tmpl.put("shoes", new DotShoes());
         tmpl.put("shop", new DotShop());
         tmpl.put("site", new DotSite());
@@ -101,6 +102,7 @@ public class TemplateFactory {
         tmpl.put("ua", new DotUa());
         tmpl.put("uk", new DotUk());
         tmpl.put("us", new DotUs());
+        tmpl.put("ws", new DotWs());
         tmpl.put("xyz", new DotXyz());
         tmpl.put("zone", new DotZone());
     }

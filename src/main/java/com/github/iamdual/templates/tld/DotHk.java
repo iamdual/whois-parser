@@ -31,15 +31,4 @@ public class DotHk extends DefaultTemplate {
     public String getFormatExpiryDate() {
         return "dd-MM-yyyy";
     }
-
-    @Override
-    public String getRegexUpdatedDate() {
-        // No updated date section.
-        return null;
-    }
-
-    @Override
-    public String getFormatUpdatedDate() {
-        return null;
-    }
 }
