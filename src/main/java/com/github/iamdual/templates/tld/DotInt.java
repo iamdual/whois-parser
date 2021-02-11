@@ -28,11 +28,6 @@ public class DotInt extends DefaultTemplate {
     }
 
     @Override
-    public String getHTTPContentType() {
-        return "application/x-www-form-urlencoded";
-    }
-
-    @Override
     public String getQueryFormat() {
         return "?q=%s";
     }

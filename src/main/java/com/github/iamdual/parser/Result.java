@@ -10,19 +10,10 @@ import java.util.Date;
  */
 
 public class Result {
-    protected String whoisServer;
     protected String whoisResponse;
     protected Boolean isAvailable;
     protected Date expiryDate;
     protected Date updatedDate;
-
-    public String getWhoisServer() {
-        return whoisServer;
-    }
-
-    public void setWhoisServer(String whoisServer) {
-        this.whoisServer = whoisServer;
-    }
 
     public String getWhoisResponse() {
         return whoisResponse;

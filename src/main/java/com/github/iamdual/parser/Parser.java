@@ -5,8 +5,6 @@ import com.github.iamdual.parser.scanner.ExpiryDate;
 import com.github.iamdual.parser.scanner.UpdatedDate;
 import com.github.iamdual.templates.Template;
 
-import java.io.IOException;
-
 /**
  * The main parser class.
  *
@@ -24,13 +22,12 @@ public class Parser {
         this.whoisResponse = whoisResponse;
     }
 
-    public Result getResult() throws IOException {
+    public Result getResult() {
         if (this.result != null) {
             return this.result;
         }
 
         this.result = new Result();
-        this.result.setWhoisServer(template.getWhoisAddress());
         this.result.setWhoisResponse(whoisResponse);
 
         Availability availability = new Availability(template, whoisResponse);
