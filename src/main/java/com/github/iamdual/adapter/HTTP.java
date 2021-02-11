@@ -32,7 +32,7 @@ public class HTTP extends Adapter {
             queryFormat = String.format(queryFormat, domain);
 
             if (isGet) {
-                requestURL += requestURL.concat(queryFormat);
+                requestURL = requestURL.concat(queryFormat);
             }
         }
 
