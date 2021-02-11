@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 abstract class Data {
 
@@ -48,9 +49,14 @@ abstract class Data {
                 adapter.setDomain(aProperDomain(tld));
                 cached.put(tld, adapter.getWhoisResponse());
                 assertNotNull(adapter.getWhoisResponse());
+                assertTrue(adapter.getWhoisResponse().length() > 0);
             } catch (UnsupportedTldException | InvalidAdapterException | IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        if (singleTest) {
+            assertTrue(cached.containsKey(System.getProperty("tld")));
         }
     }
 

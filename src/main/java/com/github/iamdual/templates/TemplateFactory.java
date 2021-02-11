@@ -43,6 +43,7 @@ public class TemplateFactory {
         tmpl.put("dev", new Google());
         tmpl.put("digital", new DotDigital());
         tmpl.put("dk", new DotDk());
+        tmpl.put("eu", new DotEu());
         tmpl.put("fun", new DotFun());
         tmpl.put("fm", new DotFm());
         tmpl.put("fr", new DotFr());
