@@ -16,17 +16,22 @@ public class DefaultTemplate implements Template {
     }
 
     @Override
-    public String getHTTPMethod() {
-        return "GET";
-    }
-
-    @Override
     public String getWhoisAddress() {
         return null;
     }
 
     @Override
     public String getQueryFormat() {
+        return null;
+    }
+
+    @Override
+    public String getHTTPMethod() {
+        return null;
+    }
+
+    @Override
+    public String getHTTPContentType() {
         return null;
     }
 

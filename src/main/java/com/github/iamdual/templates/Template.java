@@ -12,11 +12,13 @@ import com.github.iamdual.adapter.Adapter;
 public interface Template {
     Adapter.Type getAdapterType();
 
-    String getHTTPMethod();
-
     String getWhoisAddress();
 
     String getQueryFormat();
+
+    String getHTTPMethod();
+
+    String getHTTPContentType();
 
     String getRegexAvailable();
 

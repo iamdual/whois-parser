@@ -26,23 +26,30 @@ public class HTTP extends Adapter {
 
         String requestURL = template.getWhoisAddress();
         String queryFormat = template.getQueryFormat();
+        boolean isGet = template.getHTTPMethod().equalsIgnoreCase("GET");
 
         if (queryFormat != null) {
-            queryFormat = String.format(template.getQueryFormat(), domain);
+            queryFormat = String.format(queryFormat, domain);
+
+            if (isGet) {
+                requestURL += requestURL.concat(queryFormat);
+            }
         }
 
-        if (template.getHTTPMethod().equals("GET")) {
-            requestURL += queryFormat;
+        HttpURLConnection httpConnection;
+        if (proxy != null) {
+            httpConnection = (HttpURLConnection) new URL(requestURL).openConnection(proxy);
+        } else {
+            httpConnection = (HttpURLConnection) new URL(requestURL).openConnection();
         }
 
-        HttpURLConnection httpConnection = (HttpURLConnection) new URL(requestURL).openConnection();
         httpConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
         httpConnection.setRequestProperty("Referer", requestURL);
 
-        if (!template.getHTTPMethod().equals("GET")) {
+        if (!isGet) {
             httpConnection.setDoOutput(true);
             httpConnection.setRequestMethod(template.getHTTPMethod());
-            httpConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            httpConnection.setRequestProperty("Content-Type", template.getHTTPContentType());
             if (queryFormat != null) {
                 try (OutputStream output = httpConnection.getOutputStream()) {
                     output.write(queryFormat.getBytes());
