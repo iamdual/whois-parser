@@ -29,8 +29,10 @@ class HttpAdapterTest {
         adapter.setDomain(testDomain);
         Parser parser = new Parser(template, adapter.getWhoisResponse());
         Result result = parser.getResult();
+
         Assertions.assertNotNull(result.getWhoisResponse());
         Assertions.assertEquals(result.getWhoisResponse().charAt(0), '{');
+        templateFactory.getTemplates().remove("test");
     }
 
     private static class JsonPostTemplate extends DefaultTemplate {
