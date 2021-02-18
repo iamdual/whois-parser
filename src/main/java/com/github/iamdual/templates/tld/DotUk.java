@@ -25,7 +25,7 @@ public class DotUk extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // Registered on: 14-Feb-1999
-        return "Expiry date:[\\t ]+([0-9A-Za-z\\-]+)";
+        return "Expiry date:[\\s]+([0-9A-Za-z\\-]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotUk extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // Last updated:  13-Jan-2021
-        return "Last updated:[\\t ]+([0-9A-Za-z\\-]+)";
+        return "Last updated:[\\s]+([0-9A-Za-z\\-]+)";
     }
 
     @Override

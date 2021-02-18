@@ -25,7 +25,7 @@ public class DotDk extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // Expires:  2021-08-31
-        return "Expires:[\\t ]+([0-9\\-]+)";
+        return "Expires:[\\s]+([0-9\\-]+)";
     }
 
     @Override

@@ -13,32 +13,50 @@ import com.github.iamdual.templates.Template;
  */
 
 public class Parser {
-    protected Template template;
-    protected String whoisResponse;
+    protected final Template template;
+    protected final String whoisResponse;
+    protected final int flags;
     protected Result result;
+
+    public static int FLAG_AVAILABILITY = 1 << 0;
+    public static int FLAG_EXPIRY_DATE = 1 << 1;
+    public static int FLAG_UPDATED_DATE = 1 << 2;
 
     public Parser(Template template, String whoisResponse) {
         this.template = template;
         this.whoisResponse = whoisResponse;
+        this.flags = FLAG_AVAILABILITY | FLAG_EXPIRY_DATE | FLAG_UPDATED_DATE;
+    }
+
+    public Parser(Template template, String whoisResponse, int flags) {
+        this.template = template;
+        this.whoisResponse = whoisResponse;
+        this.flags = flags;
     }
 
     public Result getResult() {
-        if (this.result != null) {
-            return this.result;
+        if (result != null) {
+            return result;
         }
 
-        this.result = new Result();
-        this.result.setWhoisResponse(whoisResponse);
+        result = new Result();
+        result.setWhoisResponse(whoisResponse);
 
-        Availability availability = new Availability(template, whoisResponse);
-        this.result.setAvailable(availability.getAvailable());
+        if ((flags & FLAG_AVAILABILITY) == FLAG_AVAILABILITY) {
+            Availability availability = new Availability(template, whoisResponse);
+            result.setAvailable(availability.getAvailable());
+        }
 
-        ExpiryDate expiryDate = new ExpiryDate(template, whoisResponse);
-        this.result.setExpiryDate(expiryDate.getExpiryDate());
+        if ((flags & FLAG_EXPIRY_DATE) == FLAG_EXPIRY_DATE) {
+            ExpiryDate expiryDate = new ExpiryDate(template, whoisResponse);
+            result.setExpiryDate(expiryDate.getExpiryDate());
+        }
 
-        UpdatedDate updatedDate = new UpdatedDate(template, whoisResponse);
-        this.result.setUpdatedDate(updatedDate.getUpdatedDate());
+        if ((flags & FLAG_UPDATED_DATE) == FLAG_UPDATED_DATE) {
+            UpdatedDate updatedDate = new UpdatedDate(template, whoisResponse);
+            result.setUpdatedDate(updatedDate.getUpdatedDate());
+        }
 
-        return this.result;
+        return result;
     }
 }

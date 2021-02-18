@@ -40,7 +40,7 @@ public class DotInt extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // changed:  2020-03-24
-        return "changed:[\\t ]+([0-9\\-]+)";
+        return "changed:[\\s]+([0-9\\-]+)";
     }
 
     @Override

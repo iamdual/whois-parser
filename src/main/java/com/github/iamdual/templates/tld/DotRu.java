@@ -24,7 +24,7 @@ public class DotRu extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // paid-till:  2021-05-31T21:00:00Z
-        return "paid-till:[\\t ]+([0-9A-Z\\-\\.:]+)";
+        return "paid-till:[\\s]+([0-9A-Z\\-\\.:]+)";
     }
 
     @Override

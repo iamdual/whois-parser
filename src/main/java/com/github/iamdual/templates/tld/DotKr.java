@@ -25,7 +25,7 @@ public class DotKr extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // Expiration Date  : 2021. 02. 28.
-        return "Expiration Date[\\t ]+:[\\t ]+([0-9\\. ]+)";
+        return "Expiration Date[\\s]+:[\\s]+([0-9\\. ]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotKr extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // Last Updated Date  : 2019. 02. 12.
-        return "Last Updated Date[\\t ]+:[\\t ]+([0-9\\. ]+)";
+        return "Last Updated Date[\\s]+:[\\s]+([0-9\\. ]+)";
     }
 
     @Override

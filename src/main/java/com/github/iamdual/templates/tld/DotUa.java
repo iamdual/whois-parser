@@ -25,7 +25,7 @@ public class DotUa extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // expires:  2021-07-21 18:03:50+03
-        return "expires:[\\t ]+([0-9\\-:\\+ ]+)";
+        return "expires:[\\s]+([0-9\\-:\\+ ]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotUa extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // modified:  2020-06-19 12:31:57+03
-        return "modified:[\\t ]+([0-9\\-:\\+ ]+)";
+        return "modified:[\\s]+([0-9\\-:\\+ ]+)";
     }
 
     @Override

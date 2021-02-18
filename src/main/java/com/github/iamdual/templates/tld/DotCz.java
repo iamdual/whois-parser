@@ -25,7 +25,7 @@ public class DotCz extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // expire:  28.10.2025
-        return "expire:[\\t ]+([0-9.]+)";
+        return "expire:[\\s]+([0-9.]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotCz extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // changed:  29.09.2015 09:40:23
-        return "changed:[\\t ]+([0-9.: ]+)";
+        return "changed:[\\s]+([0-9.: ]+)";
     }
 
     @Override

@@ -25,7 +25,7 @@ public class DotPl extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // renewal date:  2028.01.31 13:00:00
-        return "renewal date:[\\t ]+([0-9\\.: ]+)";
+        return "renewal date:[\\s]+([0-9\\.: ]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotPl extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // last modified:  2020.12.21 18:25:05
-        return "modified:[\\t ]+([0-9\\.: ]+)";
+        return "modified:[\\s]+([0-9\\.: ]+)";
     }
 
     @Override

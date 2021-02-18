@@ -25,7 +25,7 @@ public class DotFr extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // Expiry Date: 2022-09-04T22:09:12Z
-        return "Expiry Date:[\\t ]+([0-9A-Z\\-:]+)";
+        return "Expiry Date:[\\s]+([0-9A-Z\\-:]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotFr extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // last-update: 2019-08-18T11:39:43Z
-        return "last-update:[\\t ]+([0-9A-Z\\-:]+)";
+        return "last-update:[\\s]+([0-9A-Z\\-:]+)";
     }
 
     @Override

@@ -25,6 +25,7 @@ public class TemplateFactory {
         tmpl.put("ar", new DotAr());
         tmpl.put("at", new DotAt());
         tmpl.put("au", new DotAu());
+        tmpl.put("be", new DotBe());
         tmpl.put("best", new DotBest());
         tmpl.put("bet", new Afilias());
         tmpl.put("biz", new DotBiz());
@@ -103,6 +104,7 @@ public class TemplateFactory {
         tmpl.put("ua", new DotUa());
         tmpl.put("uk", new DotUk());
         tmpl.put("us", new DotUs());
+        tmpl.put("website", new DotWebsite());
         tmpl.put("ws", new DotWs());
         tmpl.put("xyz", new DotXyz());
         tmpl.put("zone", new DotZone());

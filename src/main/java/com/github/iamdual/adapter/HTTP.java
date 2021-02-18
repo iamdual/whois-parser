@@ -20,8 +20,8 @@ public class HTTP extends Adapter {
     }
 
     public String getWhoisResponse() throws IOException {
-        if (this.response != null) {
-            return this.response;
+        if (response != null) {
+            return response;
         }
 
         String requestURL = template.getWhoisAddress();
@@ -67,12 +67,12 @@ public class HTTP extends Adapter {
             }
         }
 
-        this.response = stringBuilder.toString();
+        response = stringBuilder.toString();
 
-        if (this.response.length() == 0) {
+        if (response.length() == 0) {
             throw new IOException("WHOIS response is empty.");
         }
 
-        return this.response;
+        return response;
     }
 }

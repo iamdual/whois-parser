@@ -25,7 +25,7 @@ public class DotNz extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // domain_datelastmodified: 2020-08-21T15:27:01+12:00
-        return "domain_datelastmodified:[\\t ]+([0-9A-Z\\-+:]+)";
+        return "domain_datelastmodified:[\\s]+([0-9A-Z\\-+:]+)";
     }
 
     @Override

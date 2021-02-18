@@ -25,7 +25,7 @@ public class DotAr extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // expire:  2021-11-01 00:00:00
-        return "expire:[\\t ]+([0-9\\-: ]+)";
+        return "expire:[\\s]+([0-9\\-: ]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotAr extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // changed:  2020-10-13 17:45:16.825672
-        return "changed:[\\t ]+([0-9\\-: ]+)";
+        return "changed:[\\s]+([0-9\\-: ]+)";
     }
 
     @Override

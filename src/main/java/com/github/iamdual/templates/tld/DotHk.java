@@ -24,7 +24,7 @@ public class DotHk extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // Expiry Date:  05-06-2021
-        return "Expiry Date:[\\t ]+([0-9\\-]+)";
+        return "Expiry Date:[\\s]+([0-9\\-]+)";
     }
 
     @Override

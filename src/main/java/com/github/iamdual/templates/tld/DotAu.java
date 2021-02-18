@@ -25,7 +25,7 @@ public class DotAu extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // Last Modified: 2020-11-04T10:42:23Z
-        return "Last Modified:[\\t ]+([0-9A-Z\\-:]+)";
+        return "Last Modified:[\\s]+([0-9A-Z\\-:]+)";
     }
 
     @Override

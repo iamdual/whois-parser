@@ -1,7 +1,7 @@
 package com.github.iamdual.templates.tld;
 
 
-import com.github.iamdual.templates.common.CommonDate2;
+import com.github.iamdual.templates.registrar.Radix;
 
 /**
  * A WHOIS pattern of .tech TLD.
@@ -10,14 +10,9 @@ import com.github.iamdual.templates.common.CommonDate2;
  * @license: Apache-2.0 License
  */
 
-public class DotTech extends CommonDate2 {
+public class DotTech extends Radix {
     @Override
     public String getWhoisAddress() {
         return "whois.nic.tech";
-    }
-
-    @Override
-    public String getRegexAvailable() {
-        return "^The queried object does not exist";
     }
 }

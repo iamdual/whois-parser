@@ -14,15 +14,15 @@ import java.io.IOException;
 
 public class Socket extends Adapter {
 
-    protected static int TIMEOUT = 30000;
+    protected static int TIMEOUT = 20000;
 
     public Socket(Template template) {
         super(template);
     }
 
     public String getWhoisResponse() throws IOException {
-        if (this.response != null) {
-            return this.response;
+        if (response != null) {
+            return response;
         }
 
         WhoisClient whois = new WhoisClient();
@@ -34,14 +34,14 @@ public class Socket extends Adapter {
 
         whois.connect(template.getWhoisAddress());
         whois.setSoTimeout(TIMEOUT);
-        this.response = whois.query(getSocketQuery());
+        response = whois.query(getSocketQuery());
         whois.disconnect();
 
-        if (this.response == null || this.response.length() == 0) {
+        if (response == null || response.length() == 0) {
             throw new IOException("WHOIS response is empty.");
         }
 
-        return this.response;
+        return response;
     }
 
     private String getSocketQuery() {

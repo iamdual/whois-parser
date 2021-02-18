@@ -13,7 +13,7 @@ import java.net.Proxy;
  */
 
 public abstract class Adapter {
-    protected Template template;
+    protected final Template template;
     protected String domain;
     protected Proxy proxy;
     protected String response;
@@ -35,8 +35,6 @@ public abstract class Adapter {
         this.proxy = proxy;
     }
 
-    public String getWhoisResponse() throws IOException {
-        return null;
-    }
+    public abstract String getWhoisResponse() throws IOException;
 
 }

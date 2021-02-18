@@ -24,7 +24,7 @@ public class DotIl extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // validity:  19-11-2021
-        return "validity:[\\t ]+([0-9\\-]+)";
+        return "validity:[\\s]+([0-9\\-]+)";
     }
 
     @Override

@@ -25,7 +25,7 @@ public class DotNl extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // Updated Date: 2015-12-30
-        return "Updated Date:[\\t ]+([0-9\\-]+)";
+        return "Updated Date:[\\s]+([0-9\\-]+)";
     }
 
     @Override

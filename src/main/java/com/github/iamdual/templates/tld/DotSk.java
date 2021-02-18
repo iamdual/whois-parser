@@ -24,7 +24,7 @@ public class DotSk extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // Valid Until:  2021-03-11
-        return "Valid Until:[\\t ]+([0-9A-Z\\-]+)";
+        return "Valid Until:[\\s]+([0-9A-Z\\-]+)";
     }
 
     @Override
@@ -35,7 +35,7 @@ public class DotSk extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // Updated:  2020-03-11
-        return "Updated:[\\t ]+([0-9A-Z\\-]+)";
+        return "Updated:[\\s]+([0-9A-Z\\-]+)";
     }
 
     @Override

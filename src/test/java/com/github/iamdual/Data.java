@@ -21,7 +21,7 @@ abstract class Data {
     // It's also prevent sending extra requests for the same template with the same servers.
     static final String[] exclusions = {
             "clothing", "company", "digital", "market", "media", "news", "online", "services", "shoes", "services", "zone",
-            "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "ai", "cz", "tr"
+            "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "ai", "cz", "tr"
     };
 
     static Boolean singleTest = false;
@@ -93,6 +93,8 @@ abstract class Data {
                 return "co.il";
             case "nz":
                 return "co.nz";
+            case "th":
+                return "co.th";
             case "tr":
                 return "com.tr";
             case "uk":

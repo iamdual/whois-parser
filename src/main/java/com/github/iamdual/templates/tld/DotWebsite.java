@@ -4,15 +4,15 @@ package com.github.iamdual.templates.tld;
 import com.github.iamdual.templates.registrar.Radix;
 
 /**
- * A WHOIS pattern of .site TLD.
+ * A WHOIS pattern of .website TLD.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DotSite extends Radix {
+public class DotWebsite extends Radix {
     @Override
     public String getWhoisAddress() {
-        return "whois.nic.site";
+        return "whois.nic.website";
     }
 }

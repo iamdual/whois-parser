@@ -25,7 +25,7 @@ public class DotBr extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // expires:  20210518
-        return "expires:[\\t ]+([0-9]+)";
+        return "expires:[\\s]+([0-9]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotBr extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // changed:  20191105
-        return "changed:[\\t ]+([0-9]+)";
+        return "changed:[\\s]+([0-9]+)";
     }
 
     @Override

@@ -25,7 +25,7 @@ public class DotAt extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // changed:  20110426 17:57:27
-        return "changed:[\\t ]+([0-9: ]+)";
+        return "changed:[\\s]+([0-9: ]+)";
     }
 
     @Override

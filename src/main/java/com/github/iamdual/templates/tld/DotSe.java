@@ -25,7 +25,7 @@ public class DotSe extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // expires:  2021-10-20
-        return "expires:[\\t ]+([0-9\\-]+)";
+        return "expires:[\\s]+([0-9\\-]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotSe extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // modified:  2020-09-18
-        return "modified:[\\t ]+([0-9\\-]+)";
+        return "modified:[\\s]+([0-9\\-]+)";
     }
 
     @Override

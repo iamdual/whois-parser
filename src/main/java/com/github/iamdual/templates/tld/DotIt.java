@@ -19,13 +19,13 @@ public class DotIt extends DefaultTemplate {
 
     @Override
     public String getRegexAvailable() {
-        return "Status:[\\t ]+AVAILABLE";
+        return "Status:[\\s]+AVAILABLE";
     }
 
     @Override
     public String getRegexExpiryDate() {
         // Expire Date:  2021-04-05
-        return "Expire Date:[\\t ]+([0-9A-Z\\-]+)";
+        return "Expire Date:[\\s]+([0-9A-Z\\-]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotIt extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // Last Update:  2020-04-21 00:48:07
-        return "Last Update:[\\t ]+([0-9A-Z\\- :]+)";
+        return "Last Update:[\\s]+([0-9A-Z\\- :]+)";
     }
 
     @Override

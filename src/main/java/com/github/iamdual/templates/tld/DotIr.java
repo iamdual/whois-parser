@@ -25,7 +25,7 @@ public class DotIr extends DefaultTemplate {
     @Override
     public String getRegexExpiryDate() {
         // expire-date:  2021-12-22
-        return "expire-date:[\\t ]+([0-9\\-]+)";
+        return "expire-date:[\\s]+([0-9\\-]+)";
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DotIr extends DefaultTemplate {
     @Override
     public String getRegexUpdatedDate() {
         // last-updated:  2020-11-23
-        return "last-updated:[\\t ]+([0-9\\-]+)";
+        return "last-updated:[\\s]+([0-9\\-]+)";
     }
 
     @Override
