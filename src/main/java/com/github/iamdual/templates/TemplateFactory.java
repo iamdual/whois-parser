@@ -3,6 +3,7 @@ package com.github.iamdual.templates;
 import com.github.iamdual.exceptions.UnsupportedTldException;
 import com.github.iamdual.templates.registrar.Afilias;
 import com.github.iamdual.templates.registrar.Google;
+import com.github.iamdual.templates.registrar.Uniregistry;
 import com.github.iamdual.templates.registrar.Verisign;
 import com.github.iamdual.templates.tld.*;
 
@@ -34,10 +35,13 @@ public class TemplateFactory {
         tmpl.put("ca", new DotCa());
         tmpl.put("capital", new DotCapital());
         tmpl.put("cc", new DotCc());
+        tmpl.put("center", new DotCenter());
+        tmpl.put("click", new Uniregistry());
         tmpl.put("clothing", new DotClothing());
         tmpl.put("cn", new DotCn());
         tmpl.put("co", new DotCo());
         tmpl.put("com", new Verisign());
+        tmpl.put("community", new DotCommunity());
         tmpl.put("company", new DotCompany());
         tmpl.put("cz", new DotCz());
         tmpl.put("de", new DotDe());
@@ -48,7 +52,10 @@ public class TemplateFactory {
         tmpl.put("fun", new DotFun());
         tmpl.put("fm", new DotFm());
         tmpl.put("fr", new DotFr());
+        tmpl.put("gift", new Uniregistry());
         tmpl.put("guru", new DotGuru());
+        tmpl.put("help", new Uniregistry());
+        tmpl.put("hosting", new Uniregistry());
         tmpl.put("hk", new DotHk());
         tmpl.put("how", new Google());
         tmpl.put("id", new DotId());
@@ -64,7 +71,9 @@ public class TemplateFactory {
         tmpl.put("jp", new DotJp());
         tmpl.put("kr", new DotKr());
         tmpl.put("life", new DotLife());
+        tmpl.put("link", new Uniregistry());
         tmpl.put("live", new DotLive());
+        tmpl.put("lol", new Uniregistry());
         tmpl.put("market", new DotMarket());
         tmpl.put("me", new DotMe());
         tmpl.put("media", new DotMedia());

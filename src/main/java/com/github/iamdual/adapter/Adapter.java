@@ -16,6 +16,7 @@ public abstract class Adapter {
     protected final Template template;
     protected String domain;
     protected Proxy proxy;
+    protected Integer timeout;
     protected String response;
 
     public enum Type {
@@ -33,6 +34,10 @@ public abstract class Adapter {
 
     public void setProxy(Proxy proxy) {
         this.proxy = proxy;
+    }
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
     }
 
     public abstract String getWhoisResponse() throws IOException;

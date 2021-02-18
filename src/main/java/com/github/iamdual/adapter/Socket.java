@@ -14,8 +14,6 @@ import java.io.IOException;
 
 public class Socket extends Adapter {
 
-    protected static int TIMEOUT = 20000;
-
     public Socket(Template template) {
         super(template);
     }
@@ -29,11 +27,15 @@ public class Socket extends Adapter {
         if (proxy != null) {
             whois.setProxy(proxy);
         }
-        whois.setDefaultTimeout(TIMEOUT);
-        whois.setConnectTimeout(TIMEOUT);
+        if (timeout != null) {
+            whois.setDefaultTimeout(timeout);
+            whois.setConnectTimeout(timeout);
+        }
 
         whois.connect(template.getWhoisAddress());
-        whois.setSoTimeout(TIMEOUT);
+        if (timeout != null) {
+            whois.setSoTimeout(timeout);
+        }
         response = whois.query(getSocketQuery());
         whois.disconnect();
 

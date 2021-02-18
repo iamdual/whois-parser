@@ -17,14 +17,16 @@ abstract class Data {
 
     static final Map<String, String> cached = new HashMap<>();
 
-    // Some domain registrars are blocks requests due so many requests and it causes tests fail.
-    // It's also prevent sending extra requests for the same template with the same servers.
+    // Some domain registrars are blocking requests due so many WHOIS requests, or may restrict to access the information
+    // and it is causes tests fail. Exclusions also prevent to send extra requests for the same template with the same server.
+    // Please note that these extensions should be test manually at regular intervals.
     static final String[] exclusions = {
             "clothing", "company", "digital", "market", "media", "news", "online", "services", "shoes", "services", "zone",
-            "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "ai", "cz", "tr"
+            "center", "community", "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "lol", "click",
+            "help", "hosting", "ai", "cz", "tr"
     };
 
-    static Boolean singleTest = false;
+    static boolean singleTest = false;
 
     static {
         TemplateFactory templateFactory = new TemplateFactory();
@@ -61,15 +63,23 @@ abstract class Data {
     }
 
     static String anAvailableName(String tld) {
-        // Some domain names are restricted for register.
+        // Some domain names are restricted for registration.
         switch (tld) {
             case "capital":
+            case "center":
+            case "click":
             case "clothing":
+            case "community":
             case "company":
             case "digital":
+            case "gift":
             case "guru":
+            case "help":
+            case "hosting":
             case "life":
+            case "link":
             case "live":
+            case "lol":
             case "media":
             case "news":
             case "services":

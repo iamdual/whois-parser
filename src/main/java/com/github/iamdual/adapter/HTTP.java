@@ -45,6 +45,10 @@ public class HTTP extends Adapter {
 
         httpConnection.setRequestProperty("User-Agent", "Mozilla/5.0");
         httpConnection.setRequestProperty("Referer", requestURL);
+        if (timeout != null) {
+            httpConnection.setConnectTimeout(timeout);
+            httpConnection.setReadTimeout(timeout);
+        }
 
         if (!isGet) {
             httpConnection.setDoOutput(true);

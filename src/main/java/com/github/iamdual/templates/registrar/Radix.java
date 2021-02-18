@@ -3,7 +3,7 @@ package com.github.iamdual.templates.registrar;
 import com.github.iamdual.templates.common.CommonDate2;
 
 /**
- * A WHOIS pattern of Donut registrar.
+ * A WHOIS pattern of Radix registrar.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License

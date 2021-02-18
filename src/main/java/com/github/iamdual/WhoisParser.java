@@ -21,8 +21,9 @@ import java.net.Proxy;
  */
 
 public class WhoisParser {
-    protected String domain;
+    protected final String domain;
     protected Proxy proxy;
+    protected Integer timeout;
 
     public WhoisParser(String domain) {
         this.domain = domain;
@@ -32,6 +33,10 @@ public class WhoisParser {
         this.proxy = proxy;
     }
 
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
+
     public Result lookup() throws UnsupportedTldException, InvalidDomainException, InvalidAdapterException, IOException {
         TemplateFactory templateFactory = new TemplateFactory();
         Template template = templateFactory.getTemplate(Utils.getDomainTld(domain));
@@ -39,6 +44,7 @@ public class WhoisParser {
         Adapter adapter = adapterFactory.getAdapter(template);
         adapter.setDomain(domain);
         adapter.setProxy(proxy);
+        adapter.setTimeout(timeout);
         Parser parser = new Parser(template, adapter.getWhoisResponse());
         return parser.getResult();
     }
