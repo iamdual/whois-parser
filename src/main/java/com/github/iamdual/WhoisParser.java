@@ -22,11 +22,18 @@ import java.net.Proxy;
 
 public class WhoisParser {
     protected final String domain;
+    protected final Integer flags;
     protected Proxy proxy;
     protected Integer timeout;
 
     public WhoisParser(String domain) {
         this.domain = domain;
+        this.flags = null;
+    }
+
+    public WhoisParser(String domain, int flags) {
+        this.domain = domain;
+        this.flags = flags;
     }
 
     public void setProxy(Proxy proxy) {
@@ -40,12 +47,20 @@ public class WhoisParser {
     public Result lookup() throws UnsupportedTldException, InvalidDomainException, InvalidAdapterException, IOException {
         TemplateFactory templateFactory = new TemplateFactory();
         Template template = templateFactory.getTemplate(Utils.getDomainTld(domain));
+
         AdapterFactory adapterFactory = new AdapterFactory();
         Adapter adapter = adapterFactory.getAdapter(template);
         adapter.setDomain(domain);
         adapter.setProxy(proxy);
         adapter.setTimeout(timeout);
-        Parser parser = new Parser(template, adapter.getWhoisResponse());
+
+        Parser parser;
+        if (flags == null) {
+            parser = new Parser(template, adapter.getWhoisResponse());
+        } else {
+            parser = new Parser(template, adapter.getWhoisResponse(), flags);
+        }
+
         return parser.getResult();
     }
 }

@@ -23,7 +23,7 @@ abstract class Data {
     static final String[] exclusions = {
             "clothing", "company", "digital", "market", "media", "news", "online", "services", "shoes", "services", "zone",
             "center", "community", "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "lol", "click",
-            "help", "hosting", "ai", "cz", "tr"
+            "help", "hosting", "ai", "cz", "th", "tr"
     };
 
     static boolean singleTest = false;

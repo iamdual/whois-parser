@@ -10,22 +10,22 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-class FlagTest extends Data {
+class FlagsTest extends Data {
 
     @Test
-    void validateFlag() throws UnsupportedTldException {
+    void validateFlags() throws UnsupportedTldException {
         for (String tld : cached.keySet()) {
-            System.out.println("-> validateFlag has started for " + tld + "..");
+            System.out.println("-> validateFlags has started for " + tld + "..");
             String whoisResponse = cached.get(tld);
             TemplateFactory templateFactory = new TemplateFactory();
             Template template = templateFactory.getTemplate(tld);
             if (template.getRegexExpiryDate() == null || template.getRegexUpdatedDate() == null || template.getRegexAvailable() == null) {
                 continue;
             }
-            Parser parser = new Parser(template, whoisResponse, Parser.FLAG_UPDATED_DATE);
+            Parser parser = new Parser(template, whoisResponse, Parser.FLAG_UPDATED_DATE | Parser.FLAG_EXPIRY_DATE);
             Result result = parser.getResult();
             assertNull(result.getAvailable());
-            assertNull(result.getExpiryDate());
+            assertNotNull(result.getExpiryDate());
             assertNotNull(result.getUpdatedDate());
         }
     }

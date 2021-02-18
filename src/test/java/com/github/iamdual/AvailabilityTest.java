@@ -11,8 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class AvailabilityTest extends Data {
 
@@ -35,9 +34,11 @@ class AvailabilityTest extends Data {
 
         for (String tld : cached.keySet()) {
             System.out.println("-> domainIsAvailable has started for " + tld + "..");
-            WhoisParser whoisParser = new WhoisParser("shouldnotexists0248." + aProperExtension(tld));
+            WhoisParser whoisParser = new WhoisParser("shouldnotexists0248." + aProperExtension(tld), Parser.FLAG_AVAILABILITY);
             Result result = whoisParser.lookup();
             assertTrue(result.getAvailable());
+            assertNull(result.getExpiryDate());
+            assertNull(result.getUpdatedDate());
         }
     }
 }

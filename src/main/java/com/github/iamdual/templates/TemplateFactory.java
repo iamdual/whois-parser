@@ -113,7 +113,9 @@ public class TemplateFactory {
         tmpl.put("ua", new DotUa());
         tmpl.put("uk", new DotUk());
         tmpl.put("us", new DotUs());
+        tmpl.put("vip", new DotVip());
         tmpl.put("website", new DotWebsite());
+        tmpl.put("work", new DotWork());
         tmpl.put("ws", new DotWs());
         tmpl.put("xyz", new DotXyz());
         tmpl.put("zone", new DotZone());
