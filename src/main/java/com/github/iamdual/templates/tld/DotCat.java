@@ -1,22 +1,23 @@
-package com.github.iamdual.templates.registrar;
+package com.github.iamdual.templates.tld;
+
 
 import com.github.iamdual.templates.common.CommonDate4;
 
 /**
- * A WHOIS pattern of Uniregistry registrar.
+ * A WHOIS pattern of .cat TLD.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class Uniregistry extends CommonDate4 {
+public class DotCat extends CommonDate4 {
     @Override
     public String getWhoisAddress() {
-        return "whois.uniregistry.net";
+        return "whois.nic.cat";
     }
 
     @Override
     public String getRegexAvailable() {
-        return ">>> Domain .+ is available for registration";
+        return "The queried object does not exist: no matching objects found";
     }
 }

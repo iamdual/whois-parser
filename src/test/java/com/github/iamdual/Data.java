@@ -23,7 +23,8 @@ abstract class Data {
     static final String[] exclusions = {
             "clothing", "company", "digital", "market", "media", "news", "online", "services", "shoes", "services", "zone",
             "center", "community", "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "lol", "click",
-            "help", "hosting", "ai", "cz", "th", "tr"
+            "help", "hosting", "group", "partners", "rocks", "solutions", "today", "cat", "bz", "sc", "vc", "ai", "cz",
+            "th", "tr", "pw"
     };
 
     static boolean singleTest = false;
@@ -73,6 +74,7 @@ abstract class Data {
             case "company":
             case "digital":
             case "gift":
+            case "group":
             case "guru":
             case "help":
             case "hosting":
@@ -82,10 +84,15 @@ abstract class Data {
             case "lol":
             case "media":
             case "news":
+            case "rocks":
             case "services":
             case "shoes":
+            case "solutions":
+            case "today":
             case "zone":
                 return "hello";
+            case "partners":
+                return "alternative";
             case "int":
                 return "nato";
             default:

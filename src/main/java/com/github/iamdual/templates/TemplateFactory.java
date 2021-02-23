@@ -1,10 +1,7 @@
 package com.github.iamdual.templates;
 
 import com.github.iamdual.exceptions.UnsupportedTldException;
-import com.github.iamdual.templates.registrar.Afilias;
-import com.github.iamdual.templates.registrar.Google;
-import com.github.iamdual.templates.registrar.Uniregistry;
-import com.github.iamdual.templates.registrar.Verisign;
+import com.github.iamdual.templates.registrar.*;
 import com.github.iamdual.templates.tld.*;
 
 import java.util.HashMap;
@@ -32,12 +29,16 @@ public class TemplateFactory {
         tmpl.put("biz", new DotBiz());
         tmpl.put("blog", new DotBlog());
         tmpl.put("br", new DotBr());
+        tmpl.put("buzz", new DotBuzz());
+        tmpl.put("bz", new AfiliasGrs());
         tmpl.put("ca", new DotCa());
+        tmpl.put("cat", new DotCat());
         tmpl.put("capital", new DotCapital());
         tmpl.put("cc", new DotCc());
         tmpl.put("center", new DotCenter());
         tmpl.put("click", new Uniregistry());
         tmpl.put("clothing", new DotClothing());
+        tmpl.put("club", new DotClub());
         tmpl.put("cn", new DotCn());
         tmpl.put("co", new DotCo());
         tmpl.put("com", new Verisign());
@@ -53,6 +54,7 @@ public class TemplateFactory {
         tmpl.put("fm", new DotFm());
         tmpl.put("fr", new DotFr());
         tmpl.put("gift", new Uniregistry());
+        tmpl.put("group", new DotGroup());
         tmpl.put("guru", new DotGuru());
         tmpl.put("help", new Uniregistry());
         tmpl.put("hosting", new Uniregistry());
@@ -70,10 +72,12 @@ public class TemplateFactory {
         tmpl.put("jobs", new DotJobs());
         tmpl.put("jp", new DotJp());
         tmpl.put("kr", new DotKr());
+        tmpl.put("lc", new AfiliasGrs());
         tmpl.put("life", new DotLife());
         tmpl.put("link", new Uniregistry());
         tmpl.put("live", new DotLive());
         tmpl.put("lol", new Uniregistry());
+        tmpl.put("ma", new DotMa());
         tmpl.put("market", new DotMarket());
         tmpl.put("me", new DotMe());
         tmpl.put("media", new DotMedia());
@@ -90,9 +94,13 @@ public class TemplateFactory {
         tmpl.put("org", new DotOrg());
         tmpl.put("page", new Google());
         tmpl.put("party", new DotParty());
+        tmpl.put("partners", new DotPartners());
         tmpl.put("pl", new DotPl());
         tmpl.put("pro", new Afilias());
+        tmpl.put("pw", new DotPw());
         tmpl.put("ru", new DotRu());
+        tmpl.put("rocks", new DotRocks());
+        tmpl.put("sc", new AfiliasGrs());
         tmpl.put("se", new DotSe());
         tmpl.put("services", new DotServices());
         tmpl.put("sh", new DotSh());
@@ -100,11 +108,13 @@ public class TemplateFactory {
         tmpl.put("shop", new DotShop());
         tmpl.put("site", new DotSite());
         tmpl.put("sk", new DotSk());
+        tmpl.put("solutions", new DotSolutions());
         tmpl.put("soy", new Google());
         tmpl.put("store", new DotStore());
         tmpl.put("su", new DotRu());
         tmpl.put("tech", new DotTech());
         tmpl.put("th", new DotTh());
+        tmpl.put("today", new DotToday());
         tmpl.put("tr", new DotTr());
         tmpl.put("trade", new DotTrade());
         tmpl.put("travel", new DotTravel());
@@ -113,8 +123,11 @@ public class TemplateFactory {
         tmpl.put("ua", new DotUa());
         tmpl.put("uk", new DotUk());
         tmpl.put("us", new DotUs());
+        tmpl.put("vc", new AfiliasGrs());
         tmpl.put("vip", new DotVip());
+        tmpl.put("wang", new DotWang());
         tmpl.put("website", new DotWebsite());
+        tmpl.put("wiki", new DotWiki());
         tmpl.put("work", new DotWork());
         tmpl.put("ws", new DotWs());
         tmpl.put("xyz", new DotXyz());

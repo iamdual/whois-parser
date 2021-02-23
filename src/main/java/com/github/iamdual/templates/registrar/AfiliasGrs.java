@@ -1,22 +1,22 @@
 package com.github.iamdual.templates.registrar;
 
-import com.github.iamdual.templates.common.CommonDate4;
+import com.github.iamdual.templates.common.CommonDate1;
 
 /**
- * A WHOIS pattern of Uniregistry registrar.
+ * A WHOIS pattern of Afilias GRS registrar.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class Uniregistry extends CommonDate4 {
+public class AfiliasGrs extends CommonDate1 {
     @Override
     public String getWhoisAddress() {
-        return "whois.uniregistry.net";
+        return "whois2.afilias-grs.net";
     }
 
     @Override
     public String getRegexAvailable() {
-        return ">>> Domain .+ is available for registration";
+        return "^NOT FOUND";
     }
 }
