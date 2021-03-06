@@ -24,8 +24,8 @@ public class DotPl extends DefaultTemplate {
 
     @Override
     public String getRegexExpiryDate() {
-        // renewal date:  2028.01.31 13:00:00
-        return "renewal date:[\\s]+([0-9\\.: ]+)";
+        // option expiration date:  2023.10.14 09:30:46
+        return "option expiration date:[\\s]+([0-9\\.: ]+)";
     }
 
     @Override
