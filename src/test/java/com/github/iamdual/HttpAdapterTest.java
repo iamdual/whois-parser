@@ -18,11 +18,11 @@ import java.io.IOException;
 class HttpAdapterTest {
 
     @Test
-    void jsonPost() throws UnsupportedTldException, IOException, InvalidAdapterException, InvalidDomainException {
+    void jsonPost() throws UnsupportedTldException, IOException, InvalidAdapterException, InvalidDomainException, IllegalAccessException {
         String testDomain = "whois-parser.test";
 
         TemplateFactory templateFactory = new TemplateFactory();
-        templateFactory.registerTemplate("test", new JsonPostTemplate());
+        templateFactory.registerTemplate("test", JsonPostTemplate.class);
         AdapterFactory adapterFactory = new AdapterFactory();
         Template template = templateFactory.getTemplate(Utils.getDomainTld(testDomain));
         Adapter adapter = adapterFactory.getAdapter(template);
@@ -35,7 +35,7 @@ class HttpAdapterTest {
         templateFactory.getTemplates().remove("test");
     }
 
-    private static class JsonPostTemplate extends DefaultTemplate {
+    public static class JsonPostTemplate extends DefaultTemplate {
         @Override
         public Adapter.Type getAdapterType() {
             return Adapter.Type.HTTP;

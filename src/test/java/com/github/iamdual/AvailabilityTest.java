@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AvailabilityTest extends Data {
 
     @Test
-    void domainIsNotAvailable() throws UnsupportedTldException, IOException {
+    void domainIsNotAvailable() throws UnsupportedTldException, IllegalAccessException {
         for (String tld : cached.keySet()) {
             System.out.println("-> domainIsNotAvailable has started for " + tld + "..");
             String whoisResponse = cached.get(tld);
@@ -29,7 +29,7 @@ class AvailabilityTest extends Data {
     }
 
     @Test
-    void domainIsAvailable() throws UnsupportedTldException, InvalidAdapterException, IOException, InvalidDomainException, InterruptedException {
+    void domainIsAvailable() throws UnsupportedTldException, InvalidAdapterException, IOException, InvalidDomainException, InterruptedException, IllegalAccessException {
         Thread.sleep(2000);
 
         for (String tld : cached.keySet()) {

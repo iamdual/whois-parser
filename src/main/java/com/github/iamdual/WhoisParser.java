@@ -44,7 +44,7 @@ public class WhoisParser {
         this.timeout = timeout;
     }
 
-    public Result lookup() throws UnsupportedTldException, InvalidDomainException, InvalidAdapterException, IOException {
+    public Result lookup() throws UnsupportedTldException, InvalidDomainException, InvalidAdapterException, IOException, IllegalAccessException {
         TemplateFactory templateFactory = new TemplateFactory();
         Template template = templateFactory.getTemplate(Utils.getDomainTld(domain));
 

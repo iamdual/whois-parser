@@ -53,7 +53,7 @@ abstract class Data {
                 cached.put(tld, adapter.getWhoisResponse());
                 assertNotNull(adapter.getWhoisResponse());
                 assertTrue(adapter.getWhoisResponse().length() > 0);
-            } catch (UnsupportedTldException | InvalidAdapterException | IOException e) {
+            } catch (UnsupportedTldException | InvalidAdapterException | IOException | IllegalAccessException e) {
                 e.printStackTrace();
             }
         }
