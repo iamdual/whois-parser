@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class FlagsTest extends Data {
 
     @Test
-    void validateFlags() throws UnsupportedTldException {
+    void validateFlags() throws UnsupportedTldException, IllegalAccessException {
         for (String tld : cached.keySet()) {
             System.out.println("-> validateFlags has started for " + tld + "..");
             String whoisResponse = cached.get(tld);

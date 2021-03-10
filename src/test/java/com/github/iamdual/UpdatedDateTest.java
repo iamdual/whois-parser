@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class UpdatedDateTest extends Data {
 
     @Test
-    void validateUpdatedDate() throws UnsupportedTldException, IOException {
+    void validateUpdatedDate() throws UnsupportedTldException, IOException, IllegalAccessException {
         for (String tld : cached.keySet()) {
             System.out.println("-> validateUpdatedDate has started for " + tld + "..");
             String whoisResponse = cached.get(tld);

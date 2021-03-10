@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ExpiryDateTest extends Data {
 
     @Test
-    void validateExpiryDate() throws UnsupportedTldException, IOException {
+    void validateExpiryDate() throws UnsupportedTldException, IOException, IllegalAccessException {
         for (String tld : cached.keySet()) {
             System.out.println("-> validateExpiryDate has started for " + tld + "..");
             String whoisResponse = cached.get(tld);
