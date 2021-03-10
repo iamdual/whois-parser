@@ -5,8 +5,7 @@ import com.github.iamdual.templates.registrar.*;
 import com.github.iamdual.templates.tld.*;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * The factory of template for WHOIS patterns.
@@ -16,7 +15,7 @@ import java.util.Map;
  */
 
 public class TemplateFactory {
-    private static final Map<String, Class<? extends Template>> tmpl = new HashMap<>();
+    private static final Map<String, Class<? extends Template>> tmpl = new LinkedHashMap<>();
 
     static {
         tmpl.put("ai", DotAi.class);
