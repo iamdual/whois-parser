@@ -5,7 +5,8 @@ import com.github.iamdual.templates.registrar.*;
 import com.github.iamdual.templates.tld.*;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * The factory of template for WHOIS patterns.
