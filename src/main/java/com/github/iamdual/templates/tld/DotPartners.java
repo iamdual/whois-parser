@@ -1,7 +1,7 @@
 package com.github.iamdual.templates.tld;
 
 
-import com.github.iamdual.templates.registrar.Donut;
+import com.github.iamdual.templates.registrar.Donuts;
 
 /**
  * A WHOIS pattern of .partners TLD.
@@ -10,7 +10,7 @@ import com.github.iamdual.templates.registrar.Donut;
  * @license: Apache-2.0 License
  */
 
-public class DotPartners extends Donut {
+public class DotPartners extends Donuts {
     @Override
     public String getWhoisAddress() {
         return "whois.nic.partners";

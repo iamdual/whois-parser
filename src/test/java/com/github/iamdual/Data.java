@@ -23,8 +23,9 @@ abstract class Data {
     static final String[] exclusions = {
             "clothing", "company", "digital", "market", "media", "news", "online", "services", "shoes", "services", "zone",
             "center", "community", "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "lol", "click",
-            "help", "hosting", "group", "partners", "rocks", "solutions", "today", "cat", "bz", "sc", "vc", "ai", "cz",
-            "th", "tr", "pw"
+            "help", "hosting", "group", "partners", "rocks", "solutions", "today", "cat", "domains", "technology", "expert",
+            "cool", "ninja", "chat", "moda", "style", "watch", "boutique", "pub", "cafe", "coffee", "email", "social",
+            "bz", "sc", "vc", "ai", "cz", "th", "tr", "pw"
     };
 
     static boolean singleTest = false;
@@ -66,13 +67,21 @@ abstract class Data {
     static String anAvailableName(String tld) {
         // Some domain names are restricted for registration.
         switch (tld) {
+            case "boutique":
+            case "cafe":
             case "capital":
             case "center":
+            case "chat":
             case "click":
             case "clothing":
+            case "coffee":
             case "community":
             case "company":
+            case "cool":
             case "digital":
+            case "domains":
+            case "email":
+            case "expert":
             case "gift":
             case "group":
             case "guru":
@@ -83,16 +92,23 @@ abstract class Data {
             case "live":
             case "lol":
             case "media":
+            case "moda":
             case "news":
+            case "ninja":
+            case "pub":
             case "rocks":
             case "services":
             case "shoes":
             case "solutions":
+            case "style":
+            case "technology":
             case "today":
+            case "watch":
             case "zone":
                 return "hello";
             case "partners":
-                return "alternative";
+            case "social":
+                return "london";
             case "int":
                 return "nato";
             default:

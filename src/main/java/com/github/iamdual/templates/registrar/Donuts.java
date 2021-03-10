@@ -9,7 +9,7 @@ import com.github.iamdual.templates.common.CommonDate1;
  * @license: Apache-2.0 License
  */
 
-public class Donut extends CommonDate1 {
+public class Donuts extends CommonDate1 {
     @Override
     public String getRegexAvailable() {
         return "^Domain not found\\.";

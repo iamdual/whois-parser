@@ -1,7 +1,7 @@
 package com.github.iamdual.templates.tld;
 
 
-import com.github.iamdual.templates.registrar.Donut;
+import com.github.iamdual.templates.registrar.Donuts;
 
 /**
  * A WHOIS pattern of .digital TLD.
@@ -10,7 +10,7 @@ import com.github.iamdual.templates.registrar.Donut;
  * @license: Apache-2.0 License
  */
 
-public class DotDigital extends Donut {
+public class DotDigital extends Donuts {
     @Override
     public String getWhoisAddress() {
         return "whois.nic.digital";
