@@ -172,4 +172,10 @@ public class TemplateFactory {
     public void registerTemplate(String tld, Class<? extends Template> template) {
         tmpl.put(tld, template);
     }
+
+    public void registerTemplates(Map<String, Class<? extends Template>> templates) {
+        for (Map.Entry<String, Class<? extends Template>> entry : templates.entrySet()) {
+            tmpl.put(entry.getKey(), entry.getValue());
+        }
+    }
 }

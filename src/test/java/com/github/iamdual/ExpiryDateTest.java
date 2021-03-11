@@ -7,7 +7,6 @@ import com.github.iamdual.templates.Template;
 import com.github.iamdual.templates.TemplateFactory;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -16,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class ExpiryDateTest extends Data {
 
     @Test
-    void validateExpiryDate() throws UnsupportedTldException, IOException, IllegalAccessException {
+    void validateExpiryDate() throws UnsupportedTldException, IllegalAccessException {
         for (String tld : cached.keySet()) {
             System.out.println("-> validateExpiryDate has started for " + tld + "..");
             String whoisResponse = cached.get(tld);

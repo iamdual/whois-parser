@@ -12,6 +12,7 @@ import com.github.iamdual.templates.TemplateFactory;
 
 import java.io.IOException;
 import java.net.Proxy;
+import java.util.Map;
 
 /**
  * A WHOIS parser library for a some of supported TLDs.
@@ -25,6 +26,7 @@ public class WhoisParser {
     protected final Integer flags;
     protected Proxy proxy;
     protected Integer timeout;
+    protected Map<String, Class<? extends Template>> extraTemplates;
 
     public WhoisParser(String domain) {
         this.domain = domain;
@@ -44,8 +46,15 @@ public class WhoisParser {
         this.timeout = timeout;
     }
 
+    public void setExtraTemplates(Map<String, Class<? extends Template>> extraTemplates) {
+        this.extraTemplates = extraTemplates;
+    }
+
     public Result lookup() throws UnsupportedTldException, InvalidDomainException, InvalidAdapterException, IOException, IllegalAccessException {
         TemplateFactory templateFactory = new TemplateFactory();
+        if (extraTemplates != null) {
+            templateFactory.registerTemplates(extraTemplates);
+        }
         Template template = templateFactory.getTemplate(Utils.getDomainTld(domain));
 
         AdapterFactory adapterFactory = new AdapterFactory();
