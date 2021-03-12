@@ -14,9 +14,9 @@ public class AdapterFactory {
     public Adapter getAdapter(Template template) throws InvalidAdapterException {
         switch (template.getAdapterType()) {
             case SOCKET:
-                return new Socket(template);
+                return new SocketAdapter(template);
             case HTTP:
-                return new HTTP(template);
+                return new HTTPAdapter(template);
             default:
                 throw new InvalidAdapterException(template.getAdapterType());
         }
