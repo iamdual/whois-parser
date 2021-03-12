@@ -13,9 +13,9 @@ import java.net.URL;
  * @license: Apache-2.0 License
  */
 
-public class HTTP extends Adapter {
+public class HTTPAdapter extends Adapter {
 
-    public HTTP(Template template) {
+    public HTTPAdapter(Template template) {
         super(template);
     }
 
@@ -30,7 +30,6 @@ public class HTTP extends Adapter {
 
         if (queryFormat != null) {
             queryFormat = String.format(queryFormat, domain);
-
             if (isGet) {
                 requestURL = requestURL.concat(queryFormat);
             }
@@ -55,14 +54,13 @@ public class HTTP extends Adapter {
             httpConnection.setRequestMethod(template.getHTTPMethod());
             httpConnection.setRequestProperty("Content-Type", template.getHTTPContentType());
             if (queryFormat != null) {
-                try (OutputStream output = httpConnection.getOutputStream()) {
-                    output.write(queryFormat.getBytes());
-                }
+                OutputStreamWriter streamWriter = new OutputStreamWriter(httpConnection.getOutputStream());
+                streamWriter.write(queryFormat);
+                streamWriter.flush();
             }
         }
 
-        InputStream inputStream = httpConnection.getInputStream();
-
+        DataInputStream inputStream = new DataInputStream(httpConnection.getInputStream());
         StringBuilder stringBuilder = new StringBuilder();
         try (Reader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             int c;
@@ -70,6 +68,9 @@ public class HTTP extends Adapter {
                 stringBuilder.append((char) c);
             }
         }
+
+        httpConnection.disconnect();
+        inputStream.close();
 
         response = stringBuilder.toString();
 
