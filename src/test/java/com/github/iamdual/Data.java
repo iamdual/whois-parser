@@ -105,6 +105,7 @@ abstract class Data {
             case "today":
             case "watch":
             case "zone":
+            case "ekin": // for tests
                 return "hello";
             case "partners":
             case "social":

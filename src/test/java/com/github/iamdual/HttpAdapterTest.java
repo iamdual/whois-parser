@@ -10,10 +10,12 @@ import com.github.iamdual.parser.Result;
 import com.github.iamdual.templates.DefaultTemplate;
 import com.github.iamdual.templates.Template;
 import com.github.iamdual.templates.TemplateFactory;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class HttpAdapterTest {
 
@@ -30,8 +32,8 @@ class HttpAdapterTest {
         Parser parser = new Parser(template, adapter.getWhoisResponse());
         Result result = parser.getResult();
 
-        Assertions.assertNotNull(result.getWhoisResponse());
-        Assertions.assertEquals(result.getWhoisResponse().charAt(0), '{');
+        assertNotNull(result.getWhoisResponse());
+        assertEquals(result.getWhoisResponse().charAt(0), '{');
         templateFactory.getTemplates().remove("test");
     }
 
