@@ -69,6 +69,7 @@ public class TemplateFactory {
         tmpl.put("help", Uniregistry.class);
         tmpl.put("hosting", Uniregistry.class);
         tmpl.put("hk", DotHk.class);
+        tmpl.put("host", DotHost.class);
         tmpl.put("how", Google.class);
         tmpl.put("id", DotId.class);
         tmpl.put("ie", DotIe.class);
@@ -108,6 +109,7 @@ public class TemplateFactory {
         tmpl.put("party", DotParty.class);
         tmpl.put("partners", DotPartners.class);
         tmpl.put("pl", DotPl.class);
+        tmpl.put("press", DotPress.class);
         tmpl.put("pub", DotPub.class);
         tmpl.put("pro", Afilias.class);
         tmpl.put("pw", DotPw.class);
@@ -123,6 +125,7 @@ public class TemplateFactory {
         tmpl.put("sk", DotSk.class);
         tmpl.put("social", DotSocial.class);
         tmpl.put("solutions", DotSolutions.class);
+        tmpl.put("space", DotSpace.class);
         tmpl.put("soy", Google.class);
         tmpl.put("store", DotStore.class);
         tmpl.put("su", DotRu.class);

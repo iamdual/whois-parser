@@ -25,7 +25,7 @@ abstract class Data {
             "center", "community", "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "lol", "click",
             "help", "hosting", "group", "partners", "rocks", "solutions", "today", "cat", "domains", "technology", "expert",
             "cool", "ninja", "chat", "moda", "style", "watch", "boutique", "pub", "cafe", "coffee", "email", "social",
-            "bz", "sc", "vc", "ai", "cz", "th", "tr", "pw"
+            "host", "press", "bz", "sc", "vc", "ai", "cz", "th", "tr", "pw"
     };
 
     static boolean singleTest = false;
