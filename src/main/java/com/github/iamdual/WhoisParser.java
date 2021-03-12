@@ -64,10 +64,10 @@ public class WhoisParser {
         adapter.setTimeout(timeout);
 
         Parser parser;
-        if (flags == null) {
-            parser = new Parser(template, adapter.getWhoisResponse());
-        } else {
+        if (flags != null) {
             parser = new Parser(template, adapter.getWhoisResponse(), flags);
+        } else {
+            parser = new Parser(template, adapter.getWhoisResponse());
         }
 
         return parser.getResult();

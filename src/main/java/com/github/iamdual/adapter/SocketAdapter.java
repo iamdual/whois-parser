@@ -4,6 +4,7 @@ import com.github.iamdual.templates.Template;
 
 import java.io.*;
 import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.Socket;
 
 /**
@@ -24,7 +25,13 @@ public class SocketAdapter extends Adapter {
             return response;
         }
 
-        Socket socket = new Socket();
+        Socket socket;
+        if (proxy != null && proxy.type() == Proxy.Type.SOCKS) {
+            socket = new Socket(proxy);
+        } else {
+            socket = new Socket();
+        }
+
         if (timeout != null) {
             socket.connect(new InetSocketAddress(template.getWhoisAddress(), 43), timeout);
             socket.setSoTimeout(timeout);
