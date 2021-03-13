@@ -59,6 +59,7 @@ public class TemplateFactory {
         tmpl.put("domains", DotDomains.class);
         tmpl.put("email", DotEmail.class);
         tmpl.put("eu", DotEu.class);
+        tmpl.put("exchange", DotExchange.class);
         tmpl.put("expert", DotExpert.class);
         tmpl.put("fun", DotFun.class);
         tmpl.put("fm", DotFm.class);
@@ -75,6 +76,7 @@ public class TemplateFactory {
         tmpl.put("ie", DotIe.class);
         tmpl.put("il", DotIl.class);
         tmpl.put("in", DotIn.class);
+        tmpl.put("im", DotIm.class);
         tmpl.put("info", Afilias.class);
         tmpl.put("int", DotInt.class);
         tmpl.put("io", DotIo.class);
@@ -96,6 +98,7 @@ public class TemplateFactory {
         tmpl.put("mobi", Afilias.class);
         tmpl.put("name", DotName.class);
         tmpl.put("net", Verisign.class);
+        tmpl.put("network", DotNetwork.class);
         tmpl.put("new", Google.class);
         tmpl.put("news", DotNews.class);
         tmpl.put("ninja", DotNinja.class);
@@ -109,6 +112,8 @@ public class TemplateFactory {
         tmpl.put("party", DotParty.class);
         tmpl.put("partners", DotPartners.class);
         tmpl.put("pl", DotPl.class);
+        tmpl.put("plus", DotPlus.class);
+        tmpl.put("pt", DotPt.class);
         tmpl.put("press", DotPress.class);
         tmpl.put("pub", DotPub.class);
         tmpl.put("pro", Afilias.class);
@@ -125,10 +130,11 @@ public class TemplateFactory {
         tmpl.put("sk", DotSk.class);
         tmpl.put("social", DotSocial.class);
         tmpl.put("solutions", DotSolutions.class);
-        tmpl.put("space", DotSpace.class);
         tmpl.put("soy", Google.class);
+        tmpl.put("space", DotSpace.class);
         tmpl.put("store", DotStore.class);
         tmpl.put("su", DotRu.class);
+        tmpl.put("st", DotSt.class);
         tmpl.put("style", DotStyle.class);
         tmpl.put("tech", DotTech.class);
         tmpl.put("technology", DotTechnology.class);

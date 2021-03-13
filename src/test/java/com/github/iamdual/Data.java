@@ -25,7 +25,7 @@ abstract class Data {
             "center", "community", "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "lol", "click",
             "help", "hosting", "group", "partners", "rocks", "solutions", "today", "cat", "domains", "technology", "expert",
             "cool", "ninja", "chat", "moda", "style", "watch", "boutique", "pub", "cafe", "coffee", "email", "social",
-            "host", "press", "bz", "sc", "vc", "ai", "cz", "th", "tr", "pw"
+            "host", "press", "network", "exchange", "plus", "bz", "sc", "vc", "ai", "cz", "th", "tr", "pw", "pt", "id"
     };
 
     static boolean singleTest = false;
@@ -81,6 +81,7 @@ abstract class Data {
             case "digital":
             case "domains":
             case "email":
+            case "exchange":
             case "expert":
             case "gift":
             case "group":
@@ -93,9 +94,11 @@ abstract class Data {
             case "lol":
             case "media":
             case "moda":
+            case "network":
             case "news":
             case "ninja":
             case "pub":
+            case "plus":
             case "rocks":
             case "services":
             case "shoes":
