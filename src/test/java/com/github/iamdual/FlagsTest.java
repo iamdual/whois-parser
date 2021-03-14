@@ -13,9 +13,27 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class FlagsTest extends Data {
 
     @Test
-    void validateFlags() throws UnsupportedTldException, IllegalAccessException {
+    void validateFlags1() throws UnsupportedTldException, IllegalAccessException {
         for (String tld : cached.keySet()) {
-            System.out.println("-> validateFlags has started for " + tld + "..");
+            System.out.println("-> validateFlags1 has started for " + tld + "..");
+            String whoisResponse = cached.get(tld);
+            TemplateFactory templateFactory = new TemplateFactory();
+            Template template = templateFactory.getTemplate(tld);
+            if (template.getRegexExpiryDate() == null || template.getRegexUpdatedDate() == null || template.getRegexAvailable() == null) {
+                continue;
+            }
+            Parser parser = new Parser(template, whoisResponse, Parser.FLAG_AVAILABILITY);
+            Result result = parser.getResult();
+            assertNotNull(result.getAvailable());
+            assertNull(result.getExpiryDate());
+            assertNull(result.getUpdatedDate());
+        }
+    }
+
+    @Test
+    void validateFlags2() throws UnsupportedTldException, IllegalAccessException {
+        for (String tld : cached.keySet()) {
+            System.out.println("-> validateFlags2 has started for " + tld + "..");
             String whoisResponse = cached.get(tld);
             TemplateFactory templateFactory = new TemplateFactory();
             Template template = templateFactory.getTemplate(tld);

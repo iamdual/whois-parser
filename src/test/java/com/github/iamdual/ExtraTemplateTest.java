@@ -1,6 +1,5 @@
 package com.github.iamdual;
 
-import com.github.iamdual.exceptions.InvalidAdapterException;
 import com.github.iamdual.exceptions.InvalidDomainException;
 import com.github.iamdual.exceptions.UnsupportedTldException;
 import com.github.iamdual.parser.Result;
@@ -14,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ExtraTemplateTest {
 
     @Test
-    void expectedResult() throws UnsupportedTldException, IllegalAccessException, InvalidDomainException, InvalidAdapterException, IOException {
+    void expectedResult() throws UnsupportedTldException, IllegalAccessException, InvalidDomainException, IOException {
         WhoisParser whoisParser = new WhoisParser("hello.ekin");
         whoisParser.setExtraTemplates(ExtraTemplate.getTemplates());
         Result result = whoisParser.lookup();
@@ -28,7 +27,7 @@ class ExtraTemplateTest {
     }
 
     @Test
-    void domainIsAvailable() throws UnsupportedTldException, IllegalAccessException, InvalidDomainException, InvalidAdapterException, IOException {
+    void domainIsAvailable() throws UnsupportedTldException, IllegalAccessException, InvalidDomainException, IOException {
         WhoisParser whoisParser = new WhoisParser("shouldnotexists0248.ekin");
         whoisParser.setExtraTemplates(ExtraTemplate.getTemplates());
         Result result = whoisParser.lookup();

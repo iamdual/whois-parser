@@ -1,6 +1,5 @@
 package com.github.iamdual;
 
-import com.github.iamdual.exceptions.InvalidAdapterException;
 import com.github.iamdual.exceptions.InvalidDomainException;
 import com.github.iamdual.exceptions.UnsupportedTldException;
 import com.github.iamdual.parser.Parser;
@@ -29,7 +28,7 @@ class AvailabilityTest extends Data {
     }
 
     @Test
-    void domainIsAvailable() throws UnsupportedTldException, InvalidAdapterException, IOException, InvalidDomainException, InterruptedException, IllegalAccessException {
+    void domainIsAvailable() throws UnsupportedTldException, IOException, InvalidDomainException, InterruptedException, IllegalAccessException {
         Thread.sleep(2000);
 
         for (String tld : cached.keySet()) {

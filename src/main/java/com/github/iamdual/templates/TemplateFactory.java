@@ -183,8 +183,6 @@ public class TemplateFactory {
     }
 
     public void registerTemplates(Map<String, Class<? extends Template>> templates) {
-        for (Map.Entry<String, Class<? extends Template>> entry : templates.entrySet()) {
-            tmpl.put(entry.getKey(), entry.getValue());
-        }
+        tmpl.putAll(templates);
     }
 }

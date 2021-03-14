@@ -2,7 +2,6 @@ package com.github.iamdual;
 
 import com.github.iamdual.adapter.Adapter;
 import com.github.iamdual.adapter.AdapterFactory;
-import com.github.iamdual.exceptions.InvalidAdapterException;
 import com.github.iamdual.exceptions.UnsupportedTldException;
 import com.github.iamdual.templates.Template;
 import com.github.iamdual.templates.TemplateFactory;
@@ -54,7 +53,7 @@ abstract class Data {
                 cached.put(tld, adapter.getWhoisResponse());
                 assertNotNull(adapter.getWhoisResponse());
                 assertTrue(adapter.getWhoisResponse().length() > 0);
-            } catch (UnsupportedTldException | InvalidAdapterException | IOException | IllegalAccessException e) {
+            } catch (UnsupportedTldException | IOException | IllegalAccessException e) {
                 e.printStackTrace();
             }
         }

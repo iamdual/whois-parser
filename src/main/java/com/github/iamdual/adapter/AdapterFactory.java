@@ -1,6 +1,5 @@
 package com.github.iamdual.adapter;
 
-import com.github.iamdual.exceptions.InvalidAdapterException;
 import com.github.iamdual.templates.Template;
 
 /**
@@ -11,14 +10,14 @@ import com.github.iamdual.templates.Template;
  */
 
 public class AdapterFactory {
-    public Adapter getAdapter(Template template) throws InvalidAdapterException {
+    public Adapter getAdapter(Template template) throws IllegalAccessException {
         switch (template.getAdapterType()) {
             case SOCKET:
                 return new SocketAdapter(template);
             case HTTP:
                 return new HTTPAdapter(template);
             default:
-                throw new InvalidAdapterException(template.getAdapterType());
+                throw new IllegalAccessException("Invalid adapter: " + template.getAdapterType().name());
         }
     }
 }

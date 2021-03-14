@@ -2,7 +2,6 @@ package com.github.iamdual;
 
 import com.github.iamdual.adapter.Adapter;
 import com.github.iamdual.adapter.AdapterFactory;
-import com.github.iamdual.exceptions.InvalidAdapterException;
 import com.github.iamdual.exceptions.InvalidDomainException;
 import com.github.iamdual.exceptions.UnsupportedTldException;
 import com.github.iamdual.parser.Parser;
@@ -20,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 class HttpAdapterTest {
 
     @Test
-    void jsonPost() throws UnsupportedTldException, IOException, InvalidAdapterException, InvalidDomainException, IllegalAccessException {
+    void jsonPost() throws UnsupportedTldException, IOException, InvalidDomainException, IllegalAccessException {
         String testDomain = "whois-parser.test";
 
         TemplateFactory templateFactory = new TemplateFactory();
