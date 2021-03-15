@@ -1,23 +1,24 @@
 package com.github.iamdual.templates.tld;
 
 
-import com.github.iamdual.templates.common.CommonDate1;
+import com.github.iamdual.templates.DefaultTemplate;
 
 /**
- * A WHOIS pattern of .travel TLD.
+ * A WHOIS pattern of .hu TLD.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DotTravel extends CommonDate1 {
+public class DotHu extends DefaultTemplate {
+
     @Override
     public String getWhoisAddress() {
-        return "whois.nic.travel";
+        return "whois.nic.hu";
     }
 
     @Override
     public String getRegexAvailable() {
-        return "^No Data Found";
+        return "Nincs talalat / No match";
     }
 }

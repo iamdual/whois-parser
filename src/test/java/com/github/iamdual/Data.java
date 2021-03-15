@@ -18,38 +18,51 @@ abstract class Data {
 
     // Some domain registrars are blocking requests due so many WHOIS requests, or may restrict to access the information
     // and it is causes tests fail. Exclusions also prevent to send extra requests for the same template with the same server.
-    // Please note that these extensions should be test manually at regular intervals.
+    // Enter class names.
     static final String[] exclusions = {
-            "clothing", "company", "digital", "market", "media", "news", "online", "services", "shoes", "services", "zone",
-            "center", "community", "mobi", "pro", "how", "new", "soy", "life", "travel", "shop", "website", "lol", "click",
-            "help", "hosting", "group", "partners", "rocks", "solutions", "today", "cat", "domains", "technology", "expert",
-            "cool", "ninja", "chat", "moda", "style", "watch", "boutique", "pub", "cafe", "coffee", "email", "social",
-            "host", "press", "network", "exchange", "plus", "bz", "sc", "vc", "ai", "cz", "th", "tr", "pw", "pt", "id"
+            "Donuts", "Google", "CentralNic", "Uniregistry",
+            "DotShop", "DotCat", "DotAi", "DotCz", "DotTh", "DotTr", "DotPw", "DotPw", "DotId", "DotPt", "DotIr"
     };
 
-    static boolean singleTest = false;
+    static final String[] additionalTld = {
+            "center", "company", "services", // Donuts
+            "app", "dev", "how", // Google
+            "online", "website", "fun", // CentralNic
+            "click", "gift", "link", // Uniregistry
+    };
 
     static {
         TemplateFactory templateFactory = new TemplateFactory();
-        Set<String> tldList;
+        Set<String> tldList = new TreeSet<>();
+        boolean singleTest = false;
 
         if (System.getProperty("tld") != null) {
             singleTest = true;
-            tldList = Collections.singleton(System.getProperty("tld"));
+            tldList.add(System.getProperty("tld"));
         } else {
-            tldList = templateFactory.getTemplates().keySet();
+            tldList.addAll(templateFactory.getTemplates().keySet());
+            Set<String> listToRemove = new HashSet<>();
+            for (String tld : tldList) {
+                try {
+                    String templateClass = templateFactory.getTemplate(tld).getClass().getSimpleName();
+                    if (Arrays.asList(exclusions).contains(templateClass)) {
+                        listToRemove.add(tld);
+                    }
+                } catch (UnsupportedTldException | IllegalAccessException e) {
+                    e.printStackTrace();
+                }
+            }
+            tldList.removeAll(listToRemove);
+            tldList.addAll(Arrays.asList(additionalTld));
         }
 
         for (String tld : tldList) {
-            if (!singleTest && Arrays.asList(exclusions).contains(tld)) {
-                continue;
-            }
             System.out.println("-> Caching has started for " + tld + "..");
             try {
                 Template template = templateFactory.getTemplate(tld);
                 AdapterFactory adapterFactory = new AdapterFactory();
                 Adapter adapter = adapterFactory.getAdapter(template);
-                adapter.setDomain(aProperDomain(tld));
+                adapter.setDomain(aProperDomain(tld, template));
                 cached.put(tld, adapter.getWhoisResponse());
                 assertNotNull(adapter.getWhoisResponse());
                 assertTrue(adapter.getWhoisResponse().length() > 0);
@@ -63,60 +76,25 @@ abstract class Data {
         }
     }
 
-    static String anAvailableName(String tld) {
-        // Some domain names are restricted for registration.
+    static String anAvailableName(String tld, Template template) {
         switch (tld) {
-            case "boutique":
-            case "cafe":
-            case "capital":
-            case "center":
-            case "chat":
-            case "click":
-            case "clothing":
-            case "coffee":
-            case "community":
-            case "company":
-            case "cool":
-            case "digital":
-            case "domains":
-            case "email":
-            case "exchange":
-            case "expert":
-            case "gift":
-            case "group":
-            case "guru":
-            case "help":
-            case "hosting":
-            case "life":
-            case "link":
-            case "live":
-            case "lol":
-            case "media":
-            case "moda":
-            case "network":
-            case "news":
-            case "ninja":
-            case "pub":
-            case "plus":
-            case "rocks":
-            case "services":
-            case "shoes":
-            case "solutions":
-            case "style":
-            case "technology":
-            case "today":
-            case "watch":
-            case "zone":
-            case "ekin": // for tests
-                return "hello";
             case "partners":
             case "social":
+            case "market":
                 return "london";
+            case "ekin": // using for the tests
+                return "hello";
             case "int":
-                return "nato";
-            default:
-                return "google";
+                return "who";
         }
+
+        switch (template.getClass().getSimpleName()) {
+            case "Donuts":
+            case "Uniregistry":
+                return "hello";
+        }
+
+        return "google";
     }
 
     static String aProperExtension(String tld) {
@@ -140,7 +118,7 @@ abstract class Data {
         }
     }
 
-    static String aProperDomain(String tld) {
-        return anAvailableName(tld) + "." + aProperExtension(tld);
+    static String aProperDomain(String tld, Template template) {
+        return anAvailableName(tld, template) + "." + aProperExtension(tld);
     }
 }

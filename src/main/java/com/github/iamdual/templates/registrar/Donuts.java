@@ -11,6 +11,11 @@ import com.github.iamdual.templates.common.CommonDate1;
 
 public class Donuts extends CommonDate1 {
     @Override
+    public String getWhoisAddress() {
+        return "whois.donuts.co";
+    }
+
+    @Override
     public String getRegexAvailable() {
         return "^Domain not found\\.";
     }
