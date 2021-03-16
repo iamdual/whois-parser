@@ -74,7 +74,6 @@ public class TemplateFactory {
         tmpl.put("shop", DotShop.class);
         tmpl.put("sk", DotSk.class);
         tmpl.put("soy", Google.class);
-        tmpl.put("space", CentralNic.class);
         tmpl.put("su", DotRu.class);
         tmpl.put("st", DotSt.class);
         tmpl.put("th", DotTh.class);
@@ -85,7 +84,6 @@ public class TemplateFactory {
         tmpl.put("ua", DotUa.class);
         tmpl.put("uk", DotUk.class);
         tmpl.put("us", DotUs.class);
-        tmpl.put("vc", AfiliasGrs.class);
         tmpl.put("vip", DotVip.class);
         tmpl.put("wang", DotWang.class);
         tmpl.put("work", DotWork.class);
@@ -101,6 +99,7 @@ public class TemplateFactory {
         tmpl.put("bz", AfiliasGrs.class);
         tmpl.put("lc", AfiliasGrs.class);
         tmpl.put("sc", AfiliasGrs.class);
+        tmpl.put("vc", AfiliasGrs.class);
 
         // Google domains
         tmpl.put("app", Google.class);
@@ -151,7 +150,8 @@ public class TemplateFactory {
         tmpl.put("saarland", CentralNic.class);
         tmpl.put("security", CentralNic.class);
         tmpl.put("site", CentralNic.class);
-        tmpl.put("space storage", CentralNic.class);
+        tmpl.put("space", CentralNic.class);
+        tmpl.put("storage", CentralNic.class);
         tmpl.put("store", CentralNic.class);
         tmpl.put("tech", CentralNic.class);
         tmpl.put("theatre", CentralNic.class);
