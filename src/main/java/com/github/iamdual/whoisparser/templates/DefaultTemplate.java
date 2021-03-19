@@ -22,7 +22,7 @@ public class DefaultTemplate implements Template {
 
     @Override
     public String getQueryFormat() {
-        return "%s";
+        return null;
     }
 
     @Override

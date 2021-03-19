@@ -1,23 +1,22 @@
-package com.github.iamdual.whoisparser.templates.tld;
-
+package com.github.iamdual.whoisparser.templates.registrar;
 
 import com.github.iamdual.whoisparser.templates.common.CommonDate2;
 
 /**
- * A WHOIS pattern of .wiki TLD.
+ * A WHOIS pattern of XYZCOM registrar.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DotWiki extends CommonDate2 {
+public class XYZCOM extends CommonDate2 {
     @Override
     public String getWhoisAddress() {
-        return "whois.nic.wiki";
+        return "whois.nic.%2$s";
     }
 
     @Override
     public String getRegexAvailable() {
-        return "The queried object does not exist: DOMAIN NOT FOUND";
+        return "^The queried object does not exist";
     }
 }

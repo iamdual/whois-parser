@@ -24,8 +24,8 @@ public class HTTPAdapter extends Adapter {
             return response;
         }
 
-        String requestURL = template.getWhoisAddress();
-        String queryFormat = getFormatted(template.getQueryFormat());
+        String requestURL = getFormatted(template.getWhoisAddress());
+        String queryFormat = template.getQueryFormat();
         boolean isGet = template.getHTTPMethod().equalsIgnoreCase("GET");
 
         if (queryFormat != null) {

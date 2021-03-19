@@ -50,7 +50,7 @@ class HttpAdapterTest {
 
         @Override
         public String getQueryFormat() {
-            return "{\"domain\":\"%1$s\",\"tld\":\"%2$s\",\"server\":\"%3$s\"}";
+            return "{\"domain\":\"%1$s\",\"tld\":\"%2$s\"}";
         }
 
         @Override

@@ -1,19 +1,18 @@
-package com.github.iamdual.whoisparser.templates.tld;
-
+package com.github.iamdual.whoisparser.templates.registrar;
 
 import com.github.iamdual.whoisparser.templates.common.CommonDate1;
 
 /**
- * A WHOIS pattern of .bid TLD.
+ * A WHOIS pattern of Famous Four Media registrar.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class DotBid extends CommonDate1 {
+public class FamousFourMedia extends CommonDate1 {
     @Override
     public String getWhoisAddress() {
-        return "whois.nic.bid";
+        return "whois.nic.%2$s";
     }
 
     @Override

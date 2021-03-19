@@ -27,6 +27,14 @@ public class SocketAdapter extends Adapter {
             return response;
         }
 
+        String whoisServer = getFormatted(template.getWhoisAddress());
+        String queryFormat = template.getQueryFormat();
+        if (queryFormat != null) {
+            queryFormat = getFormatted(queryFormat);
+        } else {
+            queryFormat = domain;
+        }
+
         Socket socket;
         if (proxy != null && proxy.type() == Proxy.Type.SOCKS) {
             socket = new Socket(proxy);
@@ -35,14 +43,14 @@ public class SocketAdapter extends Adapter {
         }
 
         if (timeout != null) {
-            socket.connect(new InetSocketAddress(template.getWhoisAddress(), 43), timeout);
+            socket.connect(new InetSocketAddress(whoisServer, 43), timeout);
             socket.setSoTimeout(timeout);
         } else {
-            socket.connect(new InetSocketAddress(template.getWhoisAddress(), 43));
+            socket.connect(new InetSocketAddress(whoisServer, 43));
         }
 
         OutputStreamWriter streamWriter = new OutputStreamWriter(socket.getOutputStream());
-        streamWriter.write(getFormatted(template.getQueryFormat()) + CRLF);
+        streamWriter.write(queryFormat.concat(CRLF));
         streamWriter.flush();
 
         DataInputStream inputStream = new DataInputStream(socket.getInputStream());

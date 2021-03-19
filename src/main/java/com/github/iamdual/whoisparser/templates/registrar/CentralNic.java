@@ -12,8 +12,8 @@ import com.github.iamdual.whoisparser.templates.common.CommonDate2;
 public class CentralNic extends CommonDate2 {
     @Override
     public String getWhoisAddress() {
-        // whois-ote.centralnic.com is the alternative but it doesn't provide updated date.
-        return "whois.centralnic.com";
+        // alternatively whois.centralnic.com can be used.
+        return "whois.nic.%2$s";
     }
 
     @Override

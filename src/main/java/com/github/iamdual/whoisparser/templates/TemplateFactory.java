@@ -24,7 +24,6 @@ public class TemplateFactory {
         tmpl.put("at", DotAt.class);
         tmpl.put("au", DotAu.class);
         tmpl.put("be", DotBe.class);
-        tmpl.put("bid", DotBid.class);
         tmpl.put("biz", DotBiz.class);
         tmpl.put("br", DotBr.class);
         tmpl.put("buzz", DotBuzz.class);
@@ -64,7 +63,6 @@ public class TemplateFactory {
         tmpl.put("nz", DotNz.class);
         tmpl.put("one", DotOne.class);
         tmpl.put("org", DotOrg.class);
-        tmpl.put("party", DotParty.class);
         tmpl.put("pl", DotPl.class);
         tmpl.put("pt", DotPt.class);
         tmpl.put("pw", DotPw.class);
@@ -78,30 +76,27 @@ public class TemplateFactory {
         tmpl.put("st", DotSt.class);
         tmpl.put("th", DotTh.class);
         tmpl.put("tr", DotTr.class);
-        tmpl.put("trade", DotTrade.class);
         tmpl.put("tv", DotTv.class);
         tmpl.put("tw", DotTw.class);
         tmpl.put("ua", DotUa.class);
         tmpl.put("uk", DotUk.class);
         tmpl.put("us", DotUs.class);
-        tmpl.put("vip", DotVip.class);
         tmpl.put("wang", DotWang.class);
-        tmpl.put("work", DotWork.class);
         tmpl.put("ws", DotWs.class);
 
-        // Afilias domains
+        // Afilias registrar
         tmpl.put("bet", Afilias.class);
         tmpl.put("info", Afilias.class);
         tmpl.put("mobi", Afilias.class);
         tmpl.put("pro", Afilias.class);
 
-        // Afilias GRS domains
+        // Afilias GRS registrar
         tmpl.put("bz", AfiliasGrs.class);
         tmpl.put("lc", AfiliasGrs.class);
         tmpl.put("sc", AfiliasGrs.class);
         tmpl.put("vc", AfiliasGrs.class);
 
-        // Google domains
+        // Google registrar
         tmpl.put("app", Google.class);
         tmpl.put("dev", Google.class);
         tmpl.put("how", Google.class);
@@ -109,9 +104,8 @@ public class TemplateFactory {
         tmpl.put("page", Google.class);
         tmpl.put("xn--q9jyb4c", Google.class);
 
-        // CentralNic domains (Auto-generated list)
+        // CentralNic registrar
         tmpl.put("art", CentralNic.class);
-        tmpl.put("baby", CentralNic.class);
         tmpl.put("bar", CentralNic.class);
         tmpl.put("basketball", CentralNic.class);
         tmpl.put("best", CentralNic.class);
@@ -119,7 +113,6 @@ public class TemplateFactory {
         tmpl.put("bond", CentralNic.class);
         tmpl.put("cam", CentralNic.class);
         tmpl.put("ceo", CentralNic.class);
-        tmpl.put("college", CentralNic.class);
         tmpl.put("coop", CentralNic.class);
         tmpl.put("desi", CentralNic.class);
         tmpl.put("design", CentralNic.class);
@@ -135,32 +128,25 @@ public class TemplateFactory {
         tmpl.put("ink", CentralNic.class);
         tmpl.put("kred", CentralNic.class);
         tmpl.put("love", CentralNic.class);
-        tmpl.put("monster", CentralNic.class);
         tmpl.put("observer", CentralNic.class);
         tmpl.put("online", CentralNic.class);
         tmpl.put("ooo", CentralNic.class);
         tmpl.put("pid", CentralNic.class);
         tmpl.put("press", CentralNic.class);
-        tmpl.put("protection", CentralNic.class);
         tmpl.put("realty", CentralNic.class);
         tmpl.put("reit", CentralNic.class);
-        tmpl.put("rent", CentralNic.class);
         tmpl.put("rest", CentralNic.class);
         tmpl.put("rugby", CentralNic.class);
         tmpl.put("saarland", CentralNic.class);
-        tmpl.put("security", CentralNic.class);
         tmpl.put("site", CentralNic.class);
         tmpl.put("space", CentralNic.class);
-        tmpl.put("storage", CentralNic.class);
         tmpl.put("store", CentralNic.class);
         tmpl.put("tech", CentralNic.class);
-        tmpl.put("theatre", CentralNic.class);
         tmpl.put("tickets", CentralNic.class);
         tmpl.put("website", CentralNic.class);
         tmpl.put("wiki", CentralNic.class);
-        tmpl.put("xyz", CentralNic.class);
 
-        // Uniregistry domains (Auto-generated list)
+        // Uniregistry registrar
         tmpl.put("audio", Uniregistry.class);
         tmpl.put("blackfriday", Uniregistry.class);
         tmpl.put("christmas", Uniregistry.class);
@@ -187,7 +173,7 @@ public class TemplateFactory {
         tmpl.put("tattoo", Uniregistry.class);
         tmpl.put("trust", Uniregistry.class);
 
-        // Donuts domains (Auto-generated list)
+        // Donuts registrar
         tmpl.put("academy", Donuts.class);
         tmpl.put("accountants", Donuts.class);
         tmpl.put("actor", Donuts.class);
@@ -425,6 +411,69 @@ public class TemplateFactory {
         tmpl.put("world", Donuts.class);
         tmpl.put("wtf", Donuts.class);
         tmpl.put("zone", Donuts.class);
+
+        // MMX registrar
+        tmpl.put("bayern", MMX.class);
+        tmpl.put("beer", MMX.class);
+        tmpl.put("budapest", MMX.class);
+        tmpl.put("casa", MMX.class);
+        tmpl.put("cooking", MMX.class);
+        tmpl.put("fashion", MMX.class);
+        tmpl.put("fishing", MMX.class);
+        tmpl.put("fit", MMX.class);
+        tmpl.put("garden", MMX.class);
+        tmpl.put("horse", MMX.class);
+        tmpl.put("london", MMX.class);
+        tmpl.put("luxe", MMX.class);
+        tmpl.put("miami", MMX.class);
+        tmpl.put("rodeo", MMX.class);
+        tmpl.put("vip", MMX.class);
+        tmpl.put("vodka", MMX.class);
+        tmpl.put("wedding", MMX.class);
+        tmpl.put("work", MMX.class);
+        tmpl.put("yoga", MMX.class);
+
+        // Famous Four Media registrar
+        tmpl.put("accountant", FamousFourMedia.class);
+        tmpl.put("bid", FamousFourMedia.class);
+        tmpl.put("cricket", FamousFourMedia.class);
+        tmpl.put("date", FamousFourMedia.class);
+        tmpl.put("download", FamousFourMedia.class);
+        tmpl.put("faith", FamousFourMedia.class);
+        tmpl.put("loan", FamousFourMedia.class);
+        tmpl.put("men", FamousFourMedia.class);
+        tmpl.put("party", FamousFourMedia.class);
+        tmpl.put("racing", FamousFourMedia.class);
+        tmpl.put("review", FamousFourMedia.class);
+        tmpl.put("science", FamousFourMedia.class);
+        tmpl.put("stream", FamousFourMedia.class);
+        tmpl.put("trade", FamousFourMedia.class);
+        tmpl.put("webcam", FamousFourMedia.class);
+        tmpl.put("win", FamousFourMedia.class);
+
+        // XYZCOM registrar
+        tmpl.put("auto", XYZCOM.class);
+        tmpl.put("autos", XYZCOM.class);
+        tmpl.put("baby", XYZCOM.class);
+        tmpl.put("beauty", XYZCOM.class);
+        tmpl.put("boats", XYZCOM.class);
+        tmpl.put("car", XYZCOM.class);
+        tmpl.put("cars", XYZCOM.class);
+        tmpl.put("college", XYZCOM.class);
+        tmpl.put("hair", XYZCOM.class);
+        tmpl.put("homes", XYZCOM.class);
+        tmpl.put("makeup", XYZCOM.class);
+        tmpl.put("monster", XYZCOM.class);
+        tmpl.put("motorcycles", XYZCOM.class);
+        tmpl.put("protection", XYZCOM.class);
+        tmpl.put("quest", XYZCOM.class);
+        tmpl.put("rent", XYZCOM.class);
+        tmpl.put("security", XYZCOM.class);
+        tmpl.put("skin", XYZCOM.class);
+        tmpl.put("storage", XYZCOM.class);
+        tmpl.put("theatre", XYZCOM.class);
+        tmpl.put("xyz", XYZCOM.class);
+        tmpl.put("yachts", XYZCOM.class);
     }
 
     public Template getTemplate(String tld) throws UnsupportedTldException, IllegalAccessException {

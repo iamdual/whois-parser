@@ -1,6 +1,5 @@
 package com.github.iamdual.whoisparser.adapter;
 
-import com.github.iamdual.whoisparser.Utils;
 import com.github.iamdual.whoisparser.templates.Template;
 
 import java.io.IOException;
@@ -44,7 +43,7 @@ public abstract class Adapter {
     }
 
     public String getFormatted(String format) {
-        return String.format(format, domain, domainTld, template.getWhoisAddress());
+        return String.format(format, domain, domainTld);
     }
 
     public abstract String getWhoisResponse() throws IOException;

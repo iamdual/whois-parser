@@ -20,8 +20,8 @@ abstract class Data {
     // and it is causes tests fail. Exclusions also prevent to send extra requests for the same template with the same server.
     // Enter class names.
     static final String[] exclusions = {
-            "Donuts", "Google", "CentralNic", "Uniregistry",
-            "DotShop", "DotCat", "DotAi", "DotCz", "DotTh", "DotTr", "DotPw", "DotPw", "DotId", "DotPt", "DotIr"
+            "Donuts", "Google", "CentralNic", "Uniregistry", "MMX", "FamousFourMedia", "XYZCOM",
+            "DotShop", "DotCat", "DotAi", "DotCz", "DotTh", "DotTr", "DotPw", "DotId", "DotPt", "DotIr"
     };
 
     static final String[] additionalTlds = {
@@ -29,6 +29,9 @@ abstract class Data {
             "app", "dev", "how", // Google
             "online", "website", "fun", // CentralNic
             "click", "gift", "link", // Uniregistry
+            "bayern", "garden", "work", // MMX
+            "bid", "party", "science", // FamousFourMedia
+            "beauty", "college", "xyz" // XYZCOM
     };
 
     static {
