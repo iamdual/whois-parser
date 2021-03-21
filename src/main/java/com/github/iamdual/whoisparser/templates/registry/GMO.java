@@ -1,15 +1,15 @@
 package com.github.iamdual.whoisparser.templates.registry;
 
-import com.github.iamdual.whoisparser.templates.common.CommonDate1;
+import com.github.iamdual.whoisparser.templates.common.CommonDate2;
 
 /**
- * A WHOIS pattern of GRS Domains registry.
+ * A WHOIS pattern of GMO registry.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class GRSDomains extends CommonDate1 {
+public class GMO extends CommonDate2 {
     @Override
     public String getWhoisAddress() {
         return "whois.nic.%2$s";
@@ -17,6 +17,6 @@ public class GRSDomains extends CommonDate1 {
 
     @Override
     public String getRegexAvailable() {
-        return "^No Data Found";
+        return "^The queried object does not exist";
     }
 }

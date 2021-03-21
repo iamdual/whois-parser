@@ -69,12 +69,11 @@ public class TemplateFactory {
         tmpl.put("ru", DotRu.class);
         tmpl.put("se", DotSe.class);
         tmpl.put("sh", DotSh.class);
-        tmpl.put("shop", DotShop.class);
         tmpl.put("sk", DotSk.class);
-        tmpl.put("soy", Google.class);
         tmpl.put("su", DotRu.class);
         tmpl.put("st", DotSt.class);
         tmpl.put("th", DotTh.class);
+        tmpl.put("top", DotTop.class);
         tmpl.put("tr", DotTr.class);
         tmpl.put("tv", DotTv.class);
         tmpl.put("tw", DotTw.class);
@@ -102,6 +101,7 @@ public class TemplateFactory {
         tmpl.put("how", Google.class);
         tmpl.put("new", Google.class);
         tmpl.put("page", Google.class);
+        tmpl.put("soy", Google.class);
         tmpl.put("xn--q9jyb4c", Google.class);
 
         // CentralNic registry
@@ -474,6 +474,12 @@ public class TemplateFactory {
         tmpl.put("theatre", XYZCOM.class);
         tmpl.put("xyz", XYZCOM.class);
         tmpl.put("yachts", XYZCOM.class);
+
+        // GMO registry
+        tmpl.put("nagoya", GMO.class);
+        tmpl.put("shop", GMO.class);
+        tmpl.put("tokyo", GMO.class);
+        tmpl.put("yokohama", GMO.class);
     }
 
     public Template getTemplate(String tld) throws UnsupportedTldException, IllegalAccessException {
