@@ -1,7 +1,7 @@
 package com.github.iamdual.whoisparser.templates.tld;
 
 
-import com.github.iamdual.whoisparser.templates.registrar.Verisign;
+import com.github.iamdual.whoisparser.templates.registry.Verisign;
 
 /**
  * A WHOIS pattern of .tv TLD.

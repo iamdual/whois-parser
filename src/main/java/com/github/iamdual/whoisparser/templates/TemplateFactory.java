@@ -1,7 +1,7 @@
 package com.github.iamdual.whoisparser.templates;
 
 import com.github.iamdual.whoisparser.exceptions.UnsupportedTldException;
-import com.github.iamdual.whoisparser.templates.registrar.*;
+import com.github.iamdual.whoisparser.templates.registry.*;
 import com.github.iamdual.whoisparser.templates.tld.*;
 
 import java.lang.reflect.InvocationTargetException;
@@ -84,19 +84,19 @@ public class TemplateFactory {
         tmpl.put("wang", DotWang.class);
         tmpl.put("ws", DotWs.class);
 
-        // Afilias registrar
+        // Afilias registry
         tmpl.put("bet", Afilias.class);
         tmpl.put("info", Afilias.class);
         tmpl.put("mobi", Afilias.class);
         tmpl.put("pro", Afilias.class);
 
-        // Afilias GRS registrar
+        // Afilias GRS registry
         tmpl.put("bz", AfiliasGrs.class);
         tmpl.put("lc", AfiliasGrs.class);
         tmpl.put("sc", AfiliasGrs.class);
         tmpl.put("vc", AfiliasGrs.class);
 
-        // Google registrar
+        // Google registry
         tmpl.put("app", Google.class);
         tmpl.put("dev", Google.class);
         tmpl.put("how", Google.class);
@@ -104,7 +104,7 @@ public class TemplateFactory {
         tmpl.put("page", Google.class);
         tmpl.put("xn--q9jyb4c", Google.class);
 
-        // CentralNic registrar
+        // CentralNic registry
         tmpl.put("art", CentralNic.class);
         tmpl.put("bar", CentralNic.class);
         tmpl.put("basketball", CentralNic.class);
@@ -146,7 +146,7 @@ public class TemplateFactory {
         tmpl.put("website", CentralNic.class);
         tmpl.put("wiki", CentralNic.class);
 
-        // Uniregistry registrar
+        // Uniregistry registry
         tmpl.put("audio", Uniregistry.class);
         tmpl.put("blackfriday", Uniregistry.class);
         tmpl.put("christmas", Uniregistry.class);
@@ -173,7 +173,7 @@ public class TemplateFactory {
         tmpl.put("tattoo", Uniregistry.class);
         tmpl.put("trust", Uniregistry.class);
 
-        // Donuts registrar
+        // Donuts registry
         tmpl.put("academy", Donuts.class);
         tmpl.put("accountants", Donuts.class);
         tmpl.put("actor", Donuts.class);
@@ -412,7 +412,7 @@ public class TemplateFactory {
         tmpl.put("wtf", Donuts.class);
         tmpl.put("zone", Donuts.class);
 
-        // MMX registrar
+        // MMX registry
         tmpl.put("bayern", MMX.class);
         tmpl.put("beer", MMX.class);
         tmpl.put("budapest", MMX.class);
@@ -433,7 +433,7 @@ public class TemplateFactory {
         tmpl.put("work", MMX.class);
         tmpl.put("yoga", MMX.class);
 
-        // Famous Four Media registrar
+        // Famous Four Media registry
         tmpl.put("accountant", FamousFourMedia.class);
         tmpl.put("bid", FamousFourMedia.class);
         tmpl.put("cricket", FamousFourMedia.class);
@@ -451,7 +451,7 @@ public class TemplateFactory {
         tmpl.put("webcam", FamousFourMedia.class);
         tmpl.put("win", FamousFourMedia.class);
 
-        // XYZCOM registrar
+        // XYZCOM registry
         tmpl.put("auto", XYZCOM.class);
         tmpl.put("autos", XYZCOM.class);
         tmpl.put("baby", XYZCOM.class);

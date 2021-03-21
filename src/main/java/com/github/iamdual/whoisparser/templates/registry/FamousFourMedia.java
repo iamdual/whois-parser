@@ -1,15 +1,15 @@
-package com.github.iamdual.whoisparser.templates.registrar;
+package com.github.iamdual.whoisparser.templates.registry;
 
 import com.github.iamdual.whoisparser.templates.common.CommonDate1;
 
 /**
- * A WHOIS pattern of MMX registrar.
+ * A WHOIS pattern of Famous Four Media registry.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class MMX extends CommonDate1 {
+public class FamousFourMedia extends CommonDate1 {
     @Override
     public String getWhoisAddress() {
         return "whois.nic.%2$s";
@@ -17,6 +17,6 @@ public class MMX extends CommonDate1 {
 
     @Override
     public String getRegexAvailable() {
-        return "^This domain name has not been registered\\.";
+        return "^No Data Found";
     }
 }

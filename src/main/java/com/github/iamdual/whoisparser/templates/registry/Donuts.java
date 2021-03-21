@@ -1,22 +1,22 @@
-package com.github.iamdual.whoisparser.templates.registrar;
+package com.github.iamdual.whoisparser.templates.registry;
 
 import com.github.iamdual.whoisparser.templates.common.CommonDate1;
 
 /**
- * A WHOIS pattern of Verisign registrar.
+ * A WHOIS pattern of Donut registry.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class Verisign extends CommonDate1 {
+public class Donuts extends CommonDate1 {
     @Override
     public String getWhoisAddress() {
-        return "whois.verisign-grs.com";
+        return "whois.donuts.co";
     }
 
     @Override
     public String getRegexAvailable() {
-        return "^No match for \".+";
+        return "^Domain not found\\.";
     }
 }

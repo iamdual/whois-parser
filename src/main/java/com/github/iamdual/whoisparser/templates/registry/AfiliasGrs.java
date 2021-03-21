@@ -1,18 +1,18 @@
-package com.github.iamdual.whoisparser.templates.registrar;
+package com.github.iamdual.whoisparser.templates.registry;
 
 import com.github.iamdual.whoisparser.templates.common.CommonDate1;
 
 /**
- * A WHOIS pattern of Afilias registrar.
+ * A WHOIS pattern of Afilias GRS registry.
  *
  * @author: Ekin Karadeniz <iamdual@protonmail.com>
  * @license: Apache-2.0 License
  */
 
-public class Afilias extends CommonDate1 {
+public class AfiliasGrs extends CommonDate1 {
     @Override
     public String getWhoisAddress() {
-        return "whois.afilias.net";
+        return "whois2.afilias-grs.net";
     }
 
     @Override

@@ -16,7 +16,7 @@ abstract class Data {
 
     static final Map<String, String> cached = new HashMap<>();
 
-    // Some domain registrars are blocking requests due so many WHOIS requests, or may restrict to access the information
+    // Some domain registrys are blocking requests due so many WHOIS requests, or may restrict to access the information
     // and it is causes tests fail. Exclusions also prevent to send extra requests for the same template with the same server.
     // Enter class names.
     static final String[] exclusions = {
