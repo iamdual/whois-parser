@@ -9,7 +9,7 @@ import com.github.iamdual.whoisparser.templates.common.CommonDate1;
  * @license: Apache-2.0 License
  */
 
-public class FamousFourMedia extends CommonDate1 {
+public class GRSDomains extends CommonDate1 {
     @Override
     public String getWhoisAddress() {
         return "whois.nic.%2$s";

@@ -433,23 +433,23 @@ public class TemplateFactory {
         tmpl.put("work", MMX.class);
         tmpl.put("yoga", MMX.class);
 
-        // Famous Four Media registry
-        tmpl.put("accountant", FamousFourMedia.class);
-        tmpl.put("bid", FamousFourMedia.class);
-        tmpl.put("cricket", FamousFourMedia.class);
-        tmpl.put("date", FamousFourMedia.class);
-        tmpl.put("download", FamousFourMedia.class);
-        tmpl.put("faith", FamousFourMedia.class);
-        tmpl.put("loan", FamousFourMedia.class);
-        tmpl.put("men", FamousFourMedia.class);
-        tmpl.put("party", FamousFourMedia.class);
-        tmpl.put("racing", FamousFourMedia.class);
-        tmpl.put("review", FamousFourMedia.class);
-        tmpl.put("science", FamousFourMedia.class);
-        tmpl.put("stream", FamousFourMedia.class);
-        tmpl.put("trade", FamousFourMedia.class);
-        tmpl.put("webcam", FamousFourMedia.class);
-        tmpl.put("win", FamousFourMedia.class);
+        // GRS Domains registry
+        tmpl.put("accountant", GRSDomains.class);
+        tmpl.put("bid", GRSDomains.class);
+        tmpl.put("cricket", GRSDomains.class);
+        tmpl.put("date", GRSDomains.class);
+        tmpl.put("download", GRSDomains.class);
+        tmpl.put("faith", GRSDomains.class);
+        tmpl.put("loan", GRSDomains.class);
+        tmpl.put("men", GRSDomains.class);
+        tmpl.put("party", GRSDomains.class);
+        tmpl.put("racing", GRSDomains.class);
+        tmpl.put("review", GRSDomains.class);
+        tmpl.put("science", GRSDomains.class);
+        tmpl.put("stream", GRSDomains.class);
+        tmpl.put("trade", GRSDomains.class);
+        tmpl.put("webcam", GRSDomains.class);
+        tmpl.put("win", GRSDomains.class);
 
         // XYZCOM registry
         tmpl.put("auto", XYZCOM.class);
